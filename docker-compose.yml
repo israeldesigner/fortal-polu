@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  mongodb:
+    image : mongo
+    container_name: mongobd
+    command: [--auth]
+    # environment:
+      # - MONGO_INITDB_ROOT_USERNAME=DB_USER
+      # - MONGO_INITDB_ROOT_PASSWORD=DB_PASS
+      # - MONGO_INITDB_DATABASE=DB_NAME
+    volumes:
+      - ./mongobd/database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
