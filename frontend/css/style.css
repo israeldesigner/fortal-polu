@@ -7,3 +7,7 @@ div.topForm label { width: 200px; text-align: right;  display: inline-block; mar
 div.topForm input[type="text"] { width: 20px; margin-right: 40px; }
 textarea { width: 700px; height: 100px; }
 #btnSampleCSV { width: 175px; margin-left: 290px; }
+
+#map{
+    height: 450px; position: relative; outline: none;
+ }

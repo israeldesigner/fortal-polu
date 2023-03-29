@@ -1,3 +1,8 @@
+/* @preserve
+ * Leaflet 1.9.3, a JS library for interactive maps. https://leafletjs.com
+ * (c) 2010-2022 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ */
+
 /*!
    * Sizzle CSS Selector Engine v2.3.10
    * https://sizzlejs.com/
@@ -22,3 +27,7 @@
  *
  * Date: 2023-03-08T15:28Z
  */
+
+/*!
+Copyright (c) 2011-2015, Pavel Shramov, Bruno Bergot - MIT licence
+*/

@@ -2,6 +2,7 @@
 import { script } from './script';
 import { colormode } from './colormode';
 import { teste } from './convert';
+import { leaflet } from './leaflet';
 import { mobile } from './mobile';
 
 
@@ -24,6 +25,7 @@ import { mobile } from './mobile';
 ready(function() {
 
     //script jquery
+    leaflet();
     script();
     //mobile
 
