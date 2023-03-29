@@ -1,40 +1,50 @@
 <%- include('includes/header') %>
-
-<% if (user) { %>
-<section class="max-w-7xl mx-auto my-8">
-  <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
-    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] 
-    dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" 
-    style="background-position: 10px 10px;"></div>
-    <div class="relative rounded-xl overflow-auto">
-      <div class="shadow-sm overflow-hidden my-8">
-        <table class="border-collapse table-auto w-full text-sm">
-          <thead>
-            <tr>
-              <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Nome</th>
-              <th class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Sobrenome</th>
-              <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Telefone</th>
-              <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Email</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white dark:bg-slate-800">
-            <tr>
-              <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">TIsrael</td>
-              <td class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Malcolm </td>
-              <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">85996289459</td>
-              <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">israel@gmail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
-  </div>
-</section>
-<% } %>
 <section class="">
   <div id="map">
   </div>
 </section>
+<% if(tables.length > 0) { %>
+  <section class=" mx-auto my-8">
+    <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
+      <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] 
+      dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" 
+      style="background-position: 10px 10px;"></div>
+      <div class="relative rounded-xl overflow-auto">
+        <div class="shadow-sm overflow-hidden my-8">
+          <table class="border-collapse table-auto w-full text-sm">
+            <thead>
+              <tr>
+                <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Local</th>
+                <th class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">NO2</th>
+                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">CO</th>
+                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Data</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-slate-800">
+              <% tables.forEach(table => { %>
+              <tr>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"><%= table.Local %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= table.NO2 %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.CO %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= table.O3 %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.Humidity %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.PM2 %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.PM10 %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.ExTemp %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.Date %></td>
+                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"><%= table.Hour %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
+    </div>
+  </section>
+  <% } else { %>
+    <p class="text-center lead">Não existem contatos na sua agenda.</p>
+  <% } %>
+
 </body>
 <%- include('includes/footer') %>

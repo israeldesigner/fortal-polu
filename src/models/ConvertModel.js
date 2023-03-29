@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
+const excelToJson = require('convert-excel-to-json');
+
 const mongoose = require('mongoose');
 const ExcelSchema = new mongoose.Schema({  
     Date:{  
-        type:String  
+        type:Date  
     },  
     Hour:{  
         type:Number  
@@ -41,4 +43,52 @@ const ExcelSchema = new mongoose.Schema({
 });
 
 const ExcelModel = mongoose.model('Excel', ExcelSchema);
-module.exports = ExcelModel;
+class Excel {
+    constructor(){
+        this.errors = [];
+        this.excel = {};
+    }
+
+    async importExcelData2MongoDB(filePath){
+        const excelData = excelToJson({
+            sourceFile: filePath,
+            header:{
+                rows: 1
+            },
+            columnToKey: {
+                '*': '{{columnHeader}}'
+            }
+        });
+        await this.deleteExcel();
+        await this.insertExcel(excelData);
+   }
+
+   async deleteExcel(){
+     await ExcelModel.deleteMany({});
+   }
+
+   async insertExcel(data){
+    let valDatas;
+    await Object.values(data).forEach((val) =>{ 
+        ExcelModel.insertMany(val).then(
+            (result) => {
+               console.log("Items added succesfully");
+            }
+          ).catch(
+            (err) => {
+               console.log(err);
+            }
+        )
+    });
+   }
+
+   async buscaListaLocal(){
+    setInterval(() => {
+        console.log('enviando')
+    }, 10000);
+     const listaCcd = await ExcelModel.find({ Local: "ccd" }).limit(5);
+     return listaCcd
+   }
+}
+
+module.exports = Excel;
