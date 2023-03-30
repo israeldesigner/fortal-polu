@@ -11,7 +11,7 @@ const leaflet =() =>{
 
     const osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
     map.addLayer(osm);
-    fetch('../assets/img/wifor-map.kml')
+    fetch('../assets/img/map-qa.kml')
     .then(res => res.text())
     .then(kmltext => {
         // Create new kml overlay
