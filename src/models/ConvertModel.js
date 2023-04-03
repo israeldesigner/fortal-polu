@@ -83,12 +83,14 @@ class Excel {
    }
 
    async buscaListaLocal(){
-    setInterval(() => {
-        console.log('enviando')
-    }, 10000);
      const listaCcd = await ExcelModel.find({ Local: "ccd" }).limit(5);
      return listaCcd
    }
+   async buscaListaSiqueira(){
+     const listaSiqueira = await ExcelModel.find({ Local: "siquera" }).limit(5);
+     return listaSiqueira
+   }
+
 }
 
 module.exports = Excel;

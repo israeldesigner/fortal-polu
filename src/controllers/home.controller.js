@@ -4,10 +4,11 @@ const Excel = require('../models/ConvertModel');
 
 exports.index = async (req, res) => {
     const excel = new Excel();
-    console.log(excel);
     const tables = await excel.buscaListaLocal();
+    const tablesSiquera = await excel.buscaListaSiqueira();
     res.render('index', {
-        tables
+        tables,
+        tablesSiquera
     });
     return
 }

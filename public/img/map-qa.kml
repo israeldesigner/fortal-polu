@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<kml xmlns="http://www.opengis.net/kml/2.2" 
+xmlns:gx="http://www.google.com/kml/ext/2.2" 
+xmlns:kml="http://www.opengis.net/kml/2.2" 
+xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
 	<name>Apresentação - qualidade do ar 1</name>
 	<gx:CascadingStyle kml:id="__managed_style_1E650FB60D28690FE571">
 		<Style>
 			<IconStyle>
 				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+					<href>assets/img/map-marker.png</href>
 				</Icon>
 				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
 			</IconStyle>
@@ -29,7 +32,7 @@
 			<IconStyle>
 				<scale>1.2</scale>
 				<Icon>
-					<href>https://earth.google.com/earth/rpc/cc/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+					<href>assets/img/map-marker.png</href>
 				</Icon>
 				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
 			</IconStyle>

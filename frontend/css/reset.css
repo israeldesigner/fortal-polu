@@ -63,3 +63,22 @@ a {
 #toggle-darkmode:checked + label:after {
 	content: "🌙";
 }
+
+.red{
+	color: red;
+}
+.purple{
+	color: purple;
+}
+
+.orange{
+	color: orange;
+}
+
+.yellow{
+	color: yellow;
+}
+
+.green{
+	color: green;
+}

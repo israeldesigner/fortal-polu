@@ -13,6 +13,7 @@ exports.uploadfile = async (req, res)  => {
     // res.render('/converter')
     try{
         const excel = new Excel();
+        console.log(excel);
         await excel.importExcelData2MongoDB(`./uploads/${req.file.filename}`);
         res.json(req.body);
     }catch(e){

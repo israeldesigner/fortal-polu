@@ -8,7 +8,7 @@
         <color>ffd18802</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
@@ -21,7 +21,7 @@
         <color>ffd18802</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
@@ -44,7 +44,7 @@
         <color>ffd18802</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
@@ -60,7 +60,7 @@
         <color>ffd18802</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
@@ -86,7 +86,7 @@
         <color>ff3644db</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
@@ -99,7 +99,7 @@
         <color>ff3644db</color>
         <scale>1</scale>
         <Icon>
-          <href>map-marker.png</href>
+          <href>assets/img/map-marker.png</href>
         </Icon>
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
