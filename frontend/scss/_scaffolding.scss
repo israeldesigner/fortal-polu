@@ -19,3 +19,8 @@ h1 {
 .br{
   border: 1px solid red;
 }
+
+.leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
+	background-image: url('~assets/img/map-marker.png');
+}
+

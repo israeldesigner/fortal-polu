@@ -7,6 +7,6 @@ window.jQuery = $;
 window.$ = $;
 export const script = () => {
     (function($) {  
-      console.log($);                  
+      console.log($);              
     })($);
 };
