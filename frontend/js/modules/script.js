@@ -7,10 +7,6 @@ window.jQuery = $;
 window.$ = $;
 export const script = () => {
     (function($) {  
-      console.log($);
-      console.log("jquery rodando");
-      console.log("testando");
-      console.log($('.leaflet-marker-icon'));
-                  
+      console.log($);                  
     })($);
 };

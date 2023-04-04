@@ -9,6 +9,8 @@ const convertController = require('./src/controllers/convert.controller.js');
 
 //rotas da  home
 route.get('/', homeController.index);
+route.get('/api_excel',homeController.apiExcel );
+
 //rotas de login
 route.get('/login', loginController.index);
 route.post('/login/login', loginController.login);

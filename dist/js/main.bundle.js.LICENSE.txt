@@ -28,6 +28,4 @@
  * Date: 2023-03-08T15:28Z
  */
 
-/*!
-Copyright (c) 2011-2015, Pavel Shramov, Bruno Bergot - MIT licence
-*/
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */

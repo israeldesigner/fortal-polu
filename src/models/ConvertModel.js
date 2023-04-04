@@ -12,22 +12,28 @@ const ExcelSchema = new mongoose.Schema({
     Humidity:{  
         type:Number    
     },    
-    NO2:{  
+    NO2ppm:{  
         type:Number    
     },
-    CO:{  
+    COppm:{  
         type:Number    
     },
-    O3:{  
+    O3ppb:{  
         type:Number    
     },
-    PM2:{  
+    PM2ug:{  
         type:Number    
     },
-    PM10:{  
+    PM10ug:{  
         type:Number    
     },
     ExTemp:{  
+        type:Number    
+    },
+    NO2ug:{  
+        type:Number    
+    },
+    O3ug:{  
         type:Number    
     },
     Local:{  

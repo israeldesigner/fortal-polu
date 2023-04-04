@@ -37,35 +37,82 @@ const leaflet =() =>{
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
-        // const tiles = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-        //     minZoom: 3,
-        //     maxZoom: 20,
-        //     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-        //     attribution: '&copy; <a href="https://cloud.google.com/maps-platform/terms/">Google</a> contributors',
-        // });
+    let base_url = window.location.origin;
+    // const circleMarker = (_color, _fillColor, _fillOpacity, _radius) => (
+    //     {
+    //         _color:color,
+    //         // fillColor:_fillColor,
+    //         // fillOpacity:_fillOpacity,
+    //         // radius:_radius 
+    //     }, console.log(`${_color}`))
 
-    const circleCcd = L.circle([-3.7192225, -38.51417], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 500
-	}).addTo(map);
-    const circleSiquera = L.circle([-3.7899023034813, -38.5868264581879], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 500
-	}).addTo(map);
+    // circleMarker('red','outro', '#6789', 500)
+
+    function circleMarker(_color, _fillColor, _fillOpacity, _radius ) {
+        return {
+          color: _color,
+          fillColor: _fillColor,
+          fillOpacity: _fillOpacity,
+          radius:_radius
+        };
+      }
+
+      console.log(circleMarker('red', 'rednovo', 'testacolor', 500));
+
+    const fetchApiData = async () => {
+        let methodsFetc = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+        try{
+            let response = await fetch(`${base_url}/api_excel`, methodsFetc);
+            let responseData = await response.json()
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`);
+            }
+            
+            const getElementCcd = () =>{
+                console.log(responseData);
+                let arrayLastItems =[]
+                for (const key in responseData) {
+                    if (Object.hasOwnProperty.call(responseData, key)) {
+                        const element = responseData[key];
+                        let lastElement = element[element.length -1];
+                        const arraytest = [lastElement.Latitude, lastElement.Longitude];
+                        L.circle(arraytest, {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5,
+                            radius: 500
+                        }).addTo(map).bindPopup(`${lastElement.Local}`).openPopup();
+                    }
+                }
+            }
+
+            getElementCcd();
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    fetchApiData()
+
+    // const circleCcd = L.circle([-3.7192225, -38.51417], {
+	// 	color: 'red',
+	// 	fillColor: '#f03',
+	// 	fillOpacity: 0.5,
+	// 	radius: 500
+	// }).addTo(map);
+    // const circleSiquera = L.circle([-3.7899023034813, -38.5868264581879], {
+	// 	color: 'red',
+	// 	fillColor: '#f03',
+	// 	fillOpacity: 0.5,
+	// 	radius: 500
+	// }).addTo(map);
 	// const marker = L.marker([-3.7192225, -38.51417]).addTo(map);
 	// const markerPoint = L.marker([-3.7192225, -38.51417]).addTo(map);
-
-
-
-	// const polygon = L.polygon([
-	// 	[51.509, -0.08],
-	// 	[51.503, -0.06],
-	// 	[51.51, -0.047]
-	// ]).addTo(map);
 
     const conversaoParseCol = (elementCol) =>{
         const co2ColSiq = document.querySelectorAll(elementCol);
@@ -73,17 +120,29 @@ const leaflet =() =>{
         if (co2ColSiq){
             for (let i = 0; i < co2ColSiq.length; i++) {
                 const element = co2ColSiq[2];
-                const convNumber = parseFloat(element.innerHTML) * 1000;
+                const convNumber = parseFloat(element.innerHTML);
                 const convToFixed = convNumber.toFixed(3);
                 return convToFixed;
             }
         }
-    }
-    ;
+    };
+    const conversaoParseCoNovo = (elementCol) =>{
+        const co2ColSiq = document.querySelectorAll(elementCol);
+        let choiceOne;
+        if (co2ColSiq){
+            for (let i = 0; i < co2ColSiq.length; i++) {
+                const element = co2ColSiq[2];
+                const convNumber = parseFloat(element.innerHTML);
+                const convToFixed = convNumber.toFixed(3);
+                return convToFixed;
+            }
+        }
+    };
     
-    const o3ColValueSiq =  conversaoParseCol('#o2ColSiqueira');
+    const o3ColValueSiq =  conversaoParseCoNovo('#o2ColSiqueira');
+    const o2ColValueCcd =  conversaoParseCoNovo('#o2ColCcd');
+
     const co2ValueSiq = conversaoParseCol('#co2ColSiqueira');
-    const o2ColValueCcd =  conversaoParseCol('#o2ColCcd');
     const co2ValueCcd = conversaoParseCol('#co2ColCcd');
     const arrayCo2 = [10,12,14,16,50];
     const arrayO3 = [100,130,160,200,800];
@@ -113,17 +172,17 @@ const leaflet =() =>{
         <br>
         <b>${elementSimbolo}/m3 - ${elementValue}</b> 
         <p style="font-size:1.0rem">${nValue}</p>
-        <p> ${elementName} - ${elementDescription}</p>
+        <p> ${elementName}</p>
         <hr style=" border-bottom:1px solid #b2b2b2;"/>
         <b>O3/m3 - ${elementO3Value}</b> 
         <p style="font-size:1.0rem">${o3value}</p>
-        <p> Ozônio - O ozônio (O3) é um dos gases que compõe a atmosfera e cerca de 90% de suas moléculas se concentram entre 20 e 35 km de altitude</p>
+        <p> Ozônio -</p>
         `;
         return blocoTexto;
     }
 
-    circleSiquera.bindPopup(checkElement('Siqueira', 'Monóxido de Carbono','CO', co2description, co2ValueSiq, arrayCo2, arrayO3, o3ColValueSiq )).openPopup();
-    circleCcd.bindPopup(checkElement('CCD', 'Monóxido de Carbono','CO', co2description, co2ValueSiq, arrayCo2, o2ColValueCcd, o2ColValueCcd ));
+    // circleSiquera.bindPopup(checkElement('Siqueira', 'Monóxido de Carbono','CO', co2description, co2ValueSiq, arrayCo2, arrayO3, o3ColValueSiq )).openPopup();
+    // circleCcd.bindPopup(checkElement('CCD', 'Monóxido de Carbono','CO', co2description, co2ValueSiq, arrayCo2, o2ColValueCcd, o2ColValueCcd ));
     
     // const popup = L.popup()
     // .setLatLng([51.513, -0.09])
