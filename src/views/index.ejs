@@ -3,7 +3,7 @@
   <div id="map">
   </div>
 </section>
-<% if(tables.length > 0) { %>
+<!-- <% if(tables.length > 0) { %>
   <section class=" mx-auto my-8">
     <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
       <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] 
@@ -49,58 +49,15 @@
   </section>
   <% } else { %>
     <p class="text-center lead">Não existem contatos na sua agenda.</p>
-  <% } %>
+                            const _arrayIndicesPm2u  = [25, 50, 75, 125, 300];
+                        const _arrayIndicesPm10 = [50,100,150,250,600];
+                        const _arrayIndicesCoppm = [10, 12, 14, 16, 50];
+                        const _arrayIndicesNo2 = [200,240,320,1130,3750];
+                        const _arrayIndicesO3 = [100,130,160,200,800];
+                        const _arraySymbols = ['PM2.5','PM10','CO' ,'NO2','O3'];
+                        const _arrayElements = [_pm2ug, _pm10ug, _coppm, _no2ug, _o3ug];
+  <% } %> -->
 
-<% if(tablesSiquera.length > 0) { %>
-  <section class=" mx-auto my-8">
-    <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
-      <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] 
-      dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" 
-      style="background-position: 10px 10px;"></div>
-      <div class="relative rounded-xl overflow-auto">
-        <div class="shadow-sm overflow-hidden my-8">
-          <table id="teste" class="border-collapse table-auto w-full text-sm">
-            <thead>
-              <tr>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Local</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">NO2ppm</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">COppm</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">O3ppb</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Humidade</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">PM2ug</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">PM10ug</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">NO2ug</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">O3ug</th>
-                <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">ExTemp</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white dark:bg-slate-800">
-              <% tablesSiquera.forEach(table => { %>
-              <tr>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"><%= table.Local %></td>
-                <td id="no2ColCcd"      class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= table.NO2ppm %></td>
-                <td id="co2ColSiqueira" class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.COppm %></td>
-                <td id="o2ColSiqueira"  class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= table.O3ppb %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.Humidity %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.PM2ug %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.PM10ug %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.NO2ug %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.O3ug %></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"><%= table.ExTemp %></td>
-                <!-- <td class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"></td>
-                <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"></td> -->
-              </tr>
-              <% }); %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
-    </div>
-  </section>
-  <% } else { %>
-    <p class="text-center lead">Não existem contatos na sua agenda.</p>
-  <% } %>
 
 </body>
 <%- include('includes/footer') %>
