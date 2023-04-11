@@ -16,9 +16,12 @@ const leaflet =() =>{
     const arrayO3 = [100,130,160,200,800];
     const co2description = `O monóxido de carbono é um gás altamente tóxico, 
     com o limite de tolerância de 39 ppm em jornadas de trabalho de até 48 horas/semana, segundo a NR-15.`
+    let nText = 'Nível';
     let nValue;
     let colorForPm2;
+    let colorMarkerPm2;
     let blocoTexto;
+    let markerPoint;
     const _radius = 250;
     const _fillOpacity = 0.5;
     
@@ -55,7 +58,7 @@ const leaflet =() =>{
                         let _o3ug = lastElement.O3ug;
 
                         const arrayLatLong = [lastElement.Latitude, lastElement.Longitude];
-                        const _arrayIndicesPm2u  = [25, 50, 75, 125, 300];
+                        const _arrayIndicesPm2u  = [7, 50, 75, 125, 300];
                         const _arrayIndicesPm10 = [50,100,150,250,600];
                         const _arrayIndicesCoppm = [10, 12, 14, 16, 50];
                         const _arrayIndicesNo2 = [200,240,320,1130,3750];
@@ -75,69 +78,105 @@ const leaflet =() =>{
                         
                         const cheElementsInd = (elementValue, arrayElements, elementName, elementLocal) =>{
                             if(elementValue < arrayElements[0]) {
-                                nValue =`<b>NÍVEL N1</b> - qualidade boa 🤩`;
+                                nValue =`
+                                    <div class="leaflet-comb  leaflet-boa">
+                                        <b>${elementName}/m3 - ${elementValue}</b>
+                                        <br> 
+                                        <div class="leaflet-comb__content">
+                                            <b>N1 </b> - Qualidade boa <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
+                                        </div>
+                                    </div> `;
                                 colorForPm2 = { color:'Green', fillColor: '#adff2f',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/Boa.png', iconRetinaUrl: './assets/img/Boa.png', className: 'testeClass', iconSize:  [40, 40]};
                             } 
                             if(elementValue > arrayElements[0] && elementValue < arrayElements[1]) {
-                                nValue = `<b>NÍVEL N2</b> - qualidade Moderada 😀`;
+                                nValue = `
+                                <div class="leaflet-comb leaflet-moderada">
+                                    <b>${elementName}/m3 - ${elementValue}</b>
+                                    <br>
+                                    <div class="leaflet-comb__content">
+                                        <b>N2</b> - Qualidade Moderada <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                    </div>
+                                </div>`;
                                 colorForPm2 = { color:'yellow', fillColor: '#ffc801',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/Moderada.png', iconRetinaUrl: './assets/img/Moderada.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[1] && elementValue < arrayElements[2]) {
-                                nValue = `<b>NÍVEL N3</b> - qualidade Ruim 🤨`;
+                                nValue = `
+                                    <div class="leaflet-comb leaflet-ruim">
+                                        <b>${elementName}/m3 - ${elementValue}</b>
+                                        <br>
+                                        <div class="leaflet-comb__content"> 
+                                            <b>N3</b> - Qualidade Ruim 
+                                            <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />
+                                        </div>
+                                    </div>`;
                                 colorForPm2 = { color:'orange', fillColor: '#ffcd03',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/Ruim.png', iconRetinaUrl: './assets/img/Ruim.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[2] && elementValue < arrayElements[3]) {
-                                nValue = `<b>NÍVEL N4</b> - Muito Ruim 🙁`;
+                                nValue = `
+                                    <div class="leaflet-comb leaflet-mruim">
+                                        <b>${elementName}/m3 - ${elementValue}</b>
+                                        <br> 
+                                        <div class="leaflet-comb__content">
+                                            <b>N4</b> - Muito Ruim 
+                                            <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                        </div>
+                                    </div>`;
                                 colorForPm2 = { color:'red', fillColor: '#f03',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/Muito-ruim.png', iconRetinaUrl: './assets/img/Muito-ruim.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[3] && elementValue < arrayElements[4]){
-                                nValue = `<b>NÍVEL N5</b> - Péssima 😡`;
+                                nValue = `
+                                    <div class="leaflet-comb leaflet-pessima">
+                                        <b>${elementName}/m3 - ${elementValue}</b>
+                                        <br> 
+                                        <div class="leaflet-comb__content">
+                                            <b>N5</b> - Péssima <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                        </div>
+                                    </div>`;
                                 colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
                             } 
                             if(elementValue > arrayElements[4]) {
-                                nValue = `<b>NÍVEL N5</b> - Péssima 😡`;
+                                nValue = `
+                                    <div class="leaflet-comb leaflet-pessima">
+                                        <b>${elementName}/m3 - ${elementValue}</b>
+                                        <br>
+                                        <div class="leaflet-comb__content">
+                                            <b>N5</b> - Péssima <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                        </div>
+                                    </div>`;
                                 colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
+                                colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
                             };
 
                             blocoTexto = 
                             `
                             <h2 id="localPopUp"style="font-size:2.0rem;">${_pLocal}</h2>
                             <br>
-                            <b>${elementName}/m3 - ${elementValue}</b> 
-                            <p style="font-size:1.0rem">${nValue}</p>
+                            ${nValue}
                             <b>Humidade: ${_humidity}</b>
                             <br>
                             <b>O3/m3 - ${_o3ug}</b> 
-                            <p style="font-size:1.0rem">${nValue}</p>
                             <br>
                             <b>NO2/m3 - ${_no2ug}</b> 
-                            <p style="font-size:1.0rem">${nValue}</p>
                             <br>
                             <b>PM10/m3 - ${_pm10ug}</b> 
-                            <p style="font-size:1.0rem">${nValue}</p>
                             `;
                         }
 
                         
                         cheElementsInd(_pm2ug, _arrayIndicesPm2u, 'PM2.5', _pLocal);
                         // cheElementsInd(_coppm, _arrayIndicesCoppm, 'COPPM', _pLocal);
-                        L.circle(arrayLatLong, colorForPm2).addTo(map).bindPopup(blocoTexto).openPopup();
-                        // let markerPoint = L.icon({
-                        //     iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
-                        //     iconRetinaUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
-                        //     shadowUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
-                        //     className: 'testeClass',
-                        //     iconSize:     [38, 95], // size of the icon
-                        //     shadowSize:   [50, 64], // size of the shadow
-                        //     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                        //     shadowAnchor: [4, 62],  // the same for the shadow
-                        //     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-                        //   })
-                        //   L.Marker.prototype.options.icon = markerPoint
+                        // L.circle(arrayLatLong, colorForPm2).addTo(map).bindPopup(blocoTexto).openPopup();
+                        markerPoint = L.icon(colorMarkerPm2)
+                        L.Marker.prototype.options.icon = markerPoint
 
                         // L.Icon.Default.imagePath = "https://leafletjs.com/examples/custom-icons/leaf-green.png";
-                        // L.Icon.Default.className = "https://leafletjs.com/examples/custom-icons/leaf-green.png";
-                        // L.marker(arrayLatLong, markerPoint ).addTo(map).bindPopup(`${lastElement.Local}`).openPopup();
+                        // L.Icon.Default.className = "testeClasse";
+                        L.marker(arrayLatLong, markerPoint ).addTo(map).bindPopup(blocoTexto).openPopup();
                     }
                 }
             }

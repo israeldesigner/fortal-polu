@@ -97,6 +97,11 @@ class Excel {
      return listaSiqueira
    }
 
+   async getAllSheets() {
+     const allSheets = await ExcelModel.find().limit();
+     return allSheets;
+   }
+
 }
 
 module.exports = Excel;
