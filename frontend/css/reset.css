@@ -7,6 +7,10 @@
 	--link-color: #00f;
 }
 
+.sofia-font{
+	font-family: 'Sofia Sans Condensed', sans-serif;
+}
+
 /* Dark Color Scheme */
 @media (prefers-color-scheme: dark) {
 	:root {

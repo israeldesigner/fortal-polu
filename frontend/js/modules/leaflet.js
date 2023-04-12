@@ -82,226 +82,165 @@ const leaflet =() =>{
                             o3ug:_o3ug
                         }
                         
-                        const cheElementsInd = (elementValue, arrayElements, elementName, elementLocal) =>{
+                        const cheElementsInd = (elementValue, arrayElements, elementName) =>{
                             if(elementValue < arrayElements[0]) {
                                 nValue =`
-                                <div class="d-flex">
-                                    <b>N1 - Bom </b> <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
-                                </div>`;
+                                <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />`;
                                 colorForPm2 = { color:'Green', fillColor: '#adff2f',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/Boa.png', iconRetinaUrl: './assets/img/Boa.png', className: 'testeClass', iconSize:  [40, 40]};
                             } 
                             if(elementValue > arrayElements[0] && elementValue < arrayElements[1]) {
                                 nValue = `
-                                <div class="d-flex">
-                                    <b>N2 - Moderada </b> <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div> `;
+                                <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" /> `;
                                 colorForPm2 = { color:'yellow', fillColor: '#ffc801',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/Moderada.png', iconRetinaUrl: './assets/img/Moderada.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[1] && elementValue < arrayElements[2]) {
                                 nValue = `
-                                <div class="d-flex">
-                                    <b>N3 - Ruim </b> <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />
-                                </div>`;
+                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />`;
                                 colorForPm2 = { color:'orange', fillColor: '#ffcd03',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/Ruim.png', iconRetinaUrl: './assets/img/Ruim.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[2] && elementValue < arrayElements[3]) {
                                 nValue = `
-                                <div class="d-flex">
-                                    <b>N4</b> - Muito Ruim 
-                                    <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade Muito ruim" />
-                                </div>`;
+                                <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade Muito ruim" />`;
                                 colorForPm2 = { color:'red', fillColor: '#f03',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/Muito-ruim.png', iconRetinaUrl: './assets/img/Muito-ruim.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[3] && elementValue < arrayElements[4]){
                                 nValue = `
-                                <div class="d-flex">
-                                    <b>N5</b> - Péssima <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>`;
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />`;
                                 colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
                             } 
                             if(elementValue > arrayElements[4]) {
                                 nValue = `
-                                <div class="d-flex">
-                                    <b>N5</b> - Péssima <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>`;
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />`;
                                 colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
                                 colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
                             };
 
                             if(_o3ug < _arrayIndicesO3[0]){
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N1 - Bom</b>  <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
-                                </div>
+                                <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[0] && _o3ug < _arrayIndicesO3[1]) {
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N2</b> - Moderada <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[1] && _o3ug < _arrayIndicesO3[2]) {
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N3 - Ruim</b> <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[2] && _o3ug < _arrayIndicesO3[3]) {
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N4 - Muito ruim</b>  <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[3] && _o3ug < _arrayIndicesO3[4]) {
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 Péssima</b> <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[4])  {
                                 o3Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
 
                             if(_no2ug < _arrayIndicesNo2[0]){
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N1 - Bom</b>  <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
-                                </div>
+                                <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[0] && _no2ug < _arrayIndicesNo2[1]) {
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N2 - Moderada</b>  <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[1] && _no2ug < _arrayIndicesNo2[2]) {
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N3 - Ruim</b>  <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[2] && _no2ug < _arrayIndicesNo2[3]) {
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N4 - Muito ruim</b>  <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[3] && _no2ug < _arrayIndicesNo2[4]) {
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                 <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[4])  {
                                 no2Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
 
                             if(_pm10ug < _arrayIndicesPm10[0]){
                                 pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N1 - Bom </b>  <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
-                                </div>
+                                <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[0] && _pm10ug < _arrayIndicesPm10[1]) {
                                 pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N2 - Moderada</b>  <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[1] && _pm10ug < _arrayIndicesPm10[2]) {
                                 pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N3 - Ruim</b>  <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[2] && _pm10ug < _arrayIndicesPm10[3]) {
                                 pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N4 - Muito Ruim</b>  <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[3] && _pm10ug < _arrayIndicesPm10[4]) {
-                                pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                pm10Text= `               
+                                    <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[4])  {
-                                pm10Text= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade pessima" />
-                                </div>
+                                pm10Text= `   
+                                    <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade pessima" />
                                 `
                             }
 
                             if(_coppm < _arrayIndicesCoppm[0]){
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N1 - Bom </b>  <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
-                                </div>
+                                <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[0] && _coppm < _arrayIndicesCoppm[1]) {
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N2 - Moderada</b>  <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[1] && _coppm < _arrayIndicesCoppm[2]) {
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N3 - Ruim</b>  <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[2] && _coppm < _arrayIndicesCoppm[3]) {
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N4 - Muito Ruim</b>  <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade muito ruim" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[3] && _coppm < _arrayIndicesCoppm[4]) {
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b>  <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
-                                </div>
+                                    <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade pessima" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[4])  {
                                 coPpmmText= `
-                                <div class="d-flex">                                    
-                                    <b>N5 - Péssima</b> <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade pessima" />
-                                </div>
+                                <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade pessima" />
                                 `
                             }
 
@@ -310,54 +249,60 @@ const leaflet =() =>{
 
                             blocoTexto = 
                             `
-                            <div class="leaflet-bloco d-flex">
-                                <div class="leaflet-title">                            
-                                    <h2 id="localPopUp">${_pLocal}</h2>
+                            <div className="d-flex">                            
+                                <div class="leaflet-title mb-eq card rounded-none">                            
+                                    <h2 class="">${_pLocal}</h2>
                                     <div class="d-flex">
                                         <div class="d-flex mr-eq">  
-                                            <img src="./assets/img/umidade.png" alt="icone de umidade" width="18" /> 
-                                            <b class="blue-hum">${checkHumi}</b>
+                                            <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" /> 
+                                            <strong class="blue-hum">${checkHumi}</strong>
                                         </div>
                                         <div class="d-flex">
-                                            <img src="./assets/img/extemp.png" alt="icone de temperatura" width="13" /> 
-                                            <b class="orange-temp"> ${parseFloat(_exTmp).toFixed(0)}º </b>
+                                            <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
+                                            <strong class="orange-temp"> ${parseFloat(_exTmp).toFixed(0)}º </strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3>Partículas</h3>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)} </h4>${nValue}
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} </h4>${pm10Text}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="leaflet-comb leaflet-title">
-                                   <h3>Partículas PM2.5</h3>
-                                   <b>${elementName} - ${parseFloat(elementValue).toFixed(2)}m³</b>
-                                   ${nValue}
-                                </div>
-                                <div class="leaflet-comb leaflet-title">
-                                    <h3>Ozônio</h3>
-                                    <b>O³ - ${parseFloat(_o3ug).toFixed(2)}m³ </b> 
-                                    ${o3Text}
-                                </div>
-                            </div>
-                            <div class="leaflet-bloco d-flex">
-                                <div class="leaflet-comb leaflet-title">
-                                    <h3>Dióxido de nitrogênio</h3>
-                                    <b>NO²  - ${parseFloat(_no2ug).toFixed(2)}m³  </b> 
-                                    ${no2Text}
-                                </div>
-                                <div class="leaflet-comb leaflet-title">
-                                    <h3>Partículas PM10</h3>
-                                    <b>PM¹ - ${parseFloat(_pm10ug).toFixed(2)}m³ </b> 
-                                    ${pm10Text}
-                                </div>
-                                <div class="leaflet-comb leaflet-title">
-                                    <h3>Dióxido de carbono</h3>
-                                    <b>CO² - ${parseFloat(_coppm).toFixed(2)}m³ </b> 
-                                    ${coPpmmText}
-                                </div>
                             </div>
                             `;
+                        //     <div class="leaflet-bloco d-flex">
+                        //     <div class="leaflet-title card rounded-none">
+                        //        <h3>Partículas PM2.5</h3>
+                        //        <b class="d-flex">${elementName} - ${parseFloat(elementValue).toFixed(2)}m³ ${nValue}</b>
+                        //     </div>
+                        //     <div class="leaflet-title card rounded-none">
+                        //         <h3>Partículas PM10</h3>
+                        //         <b class="d-flex">PM¹ - ${parseFloat(_pm10ug).toFixed(2)}m³ ${pm10Text}</b> 
+                        //     </div>
+                        //     <div class="leaflet-title card rounded-none">
+                        //         <h3>Ozônio</h3>
+                        //         <b class="d-flex">O³ - ${parseFloat(_o3ug).toFixed(2)}m³ ${o3Text}</b> 
+                        //     </div>
+                        // </div>
+                        // <div class="leaflet-around d-flex my-3">
+                        //     <div class="leaflet-title card rounded-none">
+                        //         <h3>Dióxido de nitrogênio</h3>
+                        //         <b class="d-flex">NO² - ${parseFloat(_no2ug).toFixed(2)}m³ ${no2Text} </b> 
+                        //     </div>
+                        //     <div class="leaflet-title card rounded-none">
+                        //         <h3>Dióxido de carbono</h3>
+                        //         <b class="d-flex">CO² - ${parseFloat(_coppm).toFixed(2)}m³ ${coPpmmText}</b> 
+                        //     </div>
+                        // </div>
                         }
 
                         
-                        cheElementsInd(_pm2ug, _arrayIndicesPm2u, 'PM2.5', _pLocal);
-                        // cheElementsInd(_coppm, _arrayIndicesCoppm, 'COPPM', _pLocal);
+                        cheElementsInd(_pm2ug, _arrayIndicesPm2u, 'PM2.5');
+                        // cheElementsInd(_coppm, _arrayIndicesCoppm, 'COPPM');
                         // L.circle(arrayLatLong, colorForPm2).addTo(map).bindPopup(blocoTexto).openPopup();
                         markerPoint = L.icon(colorMarkerPm2)
                         L.Marker.prototype.options.icon = markerPoint

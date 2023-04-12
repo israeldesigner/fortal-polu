@@ -4,3 +4,5 @@ node_modules/
 openshift/
 mongobd/
 
+
+.DS_Store

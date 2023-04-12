@@ -471,7 +471,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	font-size: 1.08333em;
 	min-height: 1px;
 	padding: 20px;
-	width: 90% !important;
+	width: 100% !important;
 	}
 .leaflet-popup-content p {
 	margin: 17px 0;
@@ -642,7 +642,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 
 .leaflet-nvalue{
-	width: 25px;
+	width: 40px;
 	margin-left: 7px;
 }
 .leaflet-comb{
@@ -679,14 +679,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .leaflet-bloco{
 	justify-content: space-between;
 }
+.leaflet-around{
+	justify-content: space-around;
+}
 
-.leaflet-title{
-	border-radius: 12px;
-	background: white;
-	padding: 10px;
+.leaflet-title strong{
+	font-size: 1.65rem;
 }
 .leaflet-title h2{
-	font-size: 2.25rem;
+	font-size: 1.65rem;
 	margin-bottom: 1.0rem;
 }
 .leaflet-title h3{
@@ -705,4 +706,25 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 .testeClass:hover{
 	opacity: .65;
+}
+
+.sidebar {
+	/* background:rgba(255, 255, 255, 0.0); */
+	background:rgba(255, 255, 255, 1.0);
+	width:300px;
+	position:fixed;
+	top:0;
+	right:0px;
+	height:100%;
+	box-shadow:0 3px 8px rgba(0,0,0,0.35);
+	padding-top:10px;
+	padding-left: 20px;
+	padding-right: 10px;
+	transition:all 0.3s ease-out;
+	z-index: 1000;
+	overflow-y: scroll;
+}
+
+.sidebar__legenda{
+	font-family: 'Sofia Sans Condensed', sans-serif;
 }
