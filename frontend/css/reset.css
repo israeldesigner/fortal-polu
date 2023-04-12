@@ -64,21 +64,32 @@ a {
 	content: "🌙";
 }
 
-.red{
-	color: red;
-}
-.purple{
-	color: purple;
+.d-flex{
+	display: flex;
+	align-items: center;
 }
 
-.orange{
-	color: orange;
+.mr-eq{
+	margin-right: 1.0rem;
+}
+.ml-eq{
+	margin-left: 1.0rem;
+}
+.mt-eq{
+	margin-top: 1.0rem;
+}
+.mb-eq{
+	margin-bottom: 1.0rem;
 }
 
-.yellow{
-	color: yellow;
+.font-size2{
+	font-size: 1.5rem;
 }
 
-.green{
-	color: green;
+/* .blue-hum{
+	color: #6396ff;
 }
+
+.orange-temp{
+	color: #fa952a;
+} */
