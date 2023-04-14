@@ -2,6 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTIONSTRING, { dbName: 'db_po', useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
@@ -88,7 +89,7 @@ app.use(csrfMiddleware);
 app.use(routes);
 
 app.on('pronto', () => {
-    app.listen(4200, () => {
+    app.listen(`${PORT}`, () => {
         console.log('acessar http://localhost:4200')
         console.log("servidor está executando");
     });

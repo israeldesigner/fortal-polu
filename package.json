@@ -2,7 +2,7 @@
   "name": "fortal-polu",
   "version": "1.0.0",
   "description": "Projeto de integração de dados poluentes a prefeitura de fortaleza",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js --ignore public --ignore frontend",
@@ -14,6 +14,9 @@
     "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "keywords": [],
+  "engines": {
+    "node": "18.15.0"
+  },
   "author": "CITINOVA",
   "license": "ISC",
   "dependencies": {
@@ -72,4 +75,5 @@
     "webpack-dev-server": "^4.3.1",
     "webpack-merge": "^5.8.0"
   }
+  
 }
