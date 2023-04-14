@@ -262,33 +262,71 @@ const leaflet =() =>{
                                             <strong class="orange-temp">${checkHumi} </strong>
                                         </div>
                                     </div>
-                                    <div style="margin-top:1.5rem;">
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)} (µg/m³) </h4>${nValue}
-                                        </div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} (µg/m³)</h4>${pm10Text}
-                                        </div>
+                                    <table class="table-auto w-full">
+                                        <tr class="text-xl">
+                                            <th>Poluentes</th>
+                                            <th>Valores</th>
+                                            <th>Medida</th>
+                                            <th>Nível</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">PM<sub>2.5</sub></h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(elementValue).toFixed(2)}</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${nValue}</h4></td>
+                                        </tr>    
+                                        <tr>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">PM<sub>10</sub></h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_pm10ug).toFixed(2)}</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
+                                        </tr>    
+                                        <tr>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">CO</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_coppm).toFixed(2)}</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-2xl">µg/m³</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
+                                        </tr>    
+                                        <tr>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">O<sub>3</sub></h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_o3ug).toFixed(2)}</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
+                                        </tr>    
+                                        <tr>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">NO<sub>2</sub></h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_no2ug).toFixed(2)}</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                            <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
+                                        </tr>    
+                                    </table>
                                     </div>
-                                    <div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">CO - ${parseFloat(_coppm).toFixed(2)} (µg/m³) </h4>${coPpmmText}
-                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">O<sub>3</sub> - ${parseFloat(_o3ug).toFixed(2)} (µg/m³) </h4>${o3Text}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">NO<sub>2</sub> - ${parseFloat(_no2ug).toFixed(2)} (µg/m³) </h4>${no2Text}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `;
+                                    `;
                         }
+                                    // <div style="margin-top:1.5rem;">
+                                    //     <div class="d-flex my-2">
+                                    //         <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)}  (µg/m³) </h4>${nValue}
+                                    //     </div>
+                                    //     <div class="d-flex my-2">
+                                    //         <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} (µg/m³)</h4>${pm10Text}
+                                    //     </div>
+                                    // </div>
+                                    // <div>
+                                    //     <div class="d-flex my-2">
+                                    //         <h4 class="text-2xl">CO - ${parseFloat(_coppm).toFixed(2)} (µg/m³) </h4>${coPpmmText}
+                                    //     </div>
+                                    // </div>
+                                    // <div>
+                                    //     <div class="d-flex my-2">
+                                    //         <h4 class="text-2xl">O<sub>3</sub> - ${parseFloat(_o3ug).toFixed(2)} (µg/m³) </h4>${o3Text}
+                                    //     </div>
+                                    // </div>
+                                    // <div>
+                                    //     <div class="d-flex my-2">
+                                    //         <h4 class="text-2xl">NO<sub>2</sub> - ${parseFloat(_no2ug).toFixed(2)} (µg/m³) </h4>${no2Text}
+                                    //     </div>
+                                    // </div>
 
                         
                         cheElementsInd(_pm2ug, _arrayIndicesPm2u, 'PM2.5');
