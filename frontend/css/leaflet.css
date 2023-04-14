@@ -705,6 +705,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	font-family: 'Sofia Sans Condensed', sans-serif;
 }
 
+.leaflet-title h4{
+	color: #565656;
+}
+
 .testeClass:hover{
 	opacity: .65;
 }

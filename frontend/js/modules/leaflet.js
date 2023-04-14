@@ -97,9 +97,9 @@ const leaflet =() =>{
                             }
                             if(elementValue > arrayElements[1] && elementValue < arrayElements[2]) {
                                 nValue = `
-                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />`;
+                                <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />`;
                                 colorForPm2 = { color:'orange', fillColor: '#ffcd03',fillOpacity: _fillOpacity, radius: _radius };
-                                colorMarkerPm2 = { iconUrl: './assets/img/Ruim.png', iconRetinaUrl: './assets/img/Ruim.png', className: 'testeClass', iconSize:  [40, 40]};
+                                colorMarkerPm2 = { iconUrl: './assets/img/ruim.png', iconRetinaUrl: './assets/img/ruim.png', className: 'testeClass', iconSize:  [40, 40]};
                             }
                             if(elementValue > arrayElements[2] && elementValue < arrayElements[3]) {
                                 nValue = `
@@ -132,7 +132,7 @@ const leaflet =() =>{
                             }
                             if(_o3ug > _arrayIndicesO3[1] && _o3ug < _arrayIndicesO3[2]) {
                                 o3Text= `
-                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_o3ug > _arrayIndicesO3[2] && _o3ug < _arrayIndicesO3[3]) {
@@ -163,7 +163,7 @@ const leaflet =() =>{
                             }
                             if(_no2ug > _arrayIndicesNo2[1] && _no2ug < _arrayIndicesNo2[2]) {
                                 no2Text= `
-                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_no2ug > _arrayIndicesNo2[2] && _no2ug < _arrayIndicesNo2[3]) {
@@ -194,7 +194,7 @@ const leaflet =() =>{
                             }
                             if(_pm10ug > _arrayIndicesPm10[1] && _pm10ug < _arrayIndicesPm10[2]) {
                                 pm10Text= `
-                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
+                                <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />
                                 `
                             }
                             if(_pm10ug > _arrayIndicesPm10[2] && _pm10ug < _arrayIndicesPm10[3]) {
@@ -225,7 +225,7 @@ const leaflet =() =>{
                             }
                             if(_coppm > _arrayIndicesCoppm[1] && _coppm < _arrayIndicesCoppm[2]) {
                                 coPpmmText= `
-                                <img src="./assets/img/Ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />
+                                <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />
                                 `
                             }
                             if(_coppm > _arrayIndicesCoppm[2] && _coppm < _arrayIndicesCoppm[3]) {
@@ -250,68 +250,44 @@ const leaflet =() =>{
                             blocoTexto = 
                             `
                             <div className="d-flex">                            
-                                <div class="leaflet-title mb-eq">                            
-                                    <h2 class="">${_pLocal}</h2>
-                                    <div class="d-flex">
+                                <div class="leaflet-title">                            
+                                    <h2 class="d-flex"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" class="mr-2" width="22" alt="marker">${_pLocal}</h2>
+                                    <div class="d-flex mb-eq">
                                         <div class="d-flex mr-eq">  
-                                            <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" /> 
-                                            <strong class="blue-hum">${checkHumi}</strong>
+                                            <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
+                                            <strong class="blue-hum"> ${parseFloat(_exTmp).toFixed(0)}ºC</strong>
                                         </div>
                                         <div class="d-flex">
-                                            <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
-                                            <strong class="orange-temp"> ${parseFloat(_exTmp).toFixed(0)}º </strong>
+                                            <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" /> 
+                                            <strong class="orange-temp">${checkHumi} </strong>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top:1.5rem;">
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)} (µg/m³) </h4>${nValue}
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} (µg/m³)</h4>${pm10Text}
                                         </div>
                                     </div>
                                     <div>
                                         <div class="d-flex my-2">
-                                            <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)} </h4>${nValue}
-                                        </div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} </h4>${pm10Text}
+                                            <h4 class="text-2xl">CO - ${parseFloat(_coppm).toFixed(2)} (µg/m³) </h4>${coPpmmText}
                                         </div>
                                     </div>
                                     <div>
                                         <div class="d-flex my-2">
-                                            <h4 class="text-2xl">O<sub>3</sub> - ${parseFloat(_o3ug).toFixed(2)} </h4>${o3Text}
+                                            <h4 class="text-2xl">O<sub>3</sub> - ${parseFloat(_o3ug).toFixed(2)} (µg/m³) </h4>${o3Text}
                                         </div>
                                     </div>
                                     <div>
                                         <div class="d-flex my-2">
-                                            <h4 class="text-2xl">NO<sub>2</sub> - ${parseFloat(_no2ug).toFixed(2)} </h4>${no2Text}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex my-2">
-                                            <h4 class="text-2xl">CO<sub>2</sub> - ${parseFloat(_coppm).toFixed(2)} </h4>${coPpmmText}
+                                            <h4 class="text-2xl">NO<sub>2</sub> - ${parseFloat(_no2ug).toFixed(2)} (µg/m³) </h4>${no2Text}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             `;
-                        //     <div class="leaflet-bloco d-flex">
-                        //     <div class="leaflet-title card rounded-none">
-                        //        <h3>Partículas PM2.5</h3>
-                        //        <b class="d-flex">${elementName} - ${parseFloat(elementValue).toFixed(2)}m³ ${nValue}</b>
-                        //     </div>
-                        //     <div class="leaflet-title card rounded-none">
-                        //         <h3>Partículas PM10</h3>
-                        //         <b class="d-flex">PM¹ - ${parseFloat(_pm10ug).toFixed(2)}m³ ${pm10Text}</b> 
-                        //     </div>
-                        //     <div class="leaflet-title card rounded-none">
-                        //         <h3>Ozônio</h3>
-                        //         <b class="d-flex">O³ - ${parseFloat(_o3ug).toFixed(2)}m³ ${o3Text}</b> 
-                        //     </div>
-                        // </div>
-                        // <div class="leaflet-around d-flex my-3">
-                        //     <div class="leaflet-title card rounded-none">
-                        //         <h3>Dióxido de nitrogênio</h3>
-                        //         <b class="d-flex">NO² - ${parseFloat(_no2ug).toFixed(2)}m³ ${no2Text} </b> 
-                        //     </div>
-                        //     <div class="leaflet-title card rounded-none">
-                        //         <h3>Dióxido de carbono</h3>
-                        //         <b class="d-flex">CO² - ${parseFloat(_coppm).toFixed(2)}m³ ${coPpmmText}</b> 
-                        //     </div>
-                        // </div>
                         }
 
                         
