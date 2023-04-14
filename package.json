@@ -8,8 +8,10 @@
     "start": "nodemon server.js --ignore public --ignore frontend",
     "dev": "cross-env NODE_ENV=development webpack -w --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack -w --config config/webpack.prod.js",
+    "production": "pm2 start server.js --name nodepm --watch -i 1",
     "lint": "eslint 'src/**/*.js' || true",
-    "prettify": "prettier --write 'src/**/*.js'"
+    "prettify": "prettier --write 'src/**/*.js'",
+    "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "keywords": [],
   "author": "CITINOVA",
@@ -30,6 +32,7 @@
     "jest": "^27.5.1",
     "mongoose": "^7.0.1",
     "multer": "^1.4.5-lts.1",
+    "pm2": "^5.3.0",
     "redis": "^4.6.5",
     "validator": "^13.9.0"
   },

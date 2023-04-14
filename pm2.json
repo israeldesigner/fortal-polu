@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "name": "fortal-polu",
+            "script": "server.js",
+            "instances": 2,
+            "exec_mode": "cluster",
+            "source_map_support": false
+        }
+    ]
+}

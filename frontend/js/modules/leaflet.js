@@ -250,7 +250,7 @@ const leaflet =() =>{
                             blocoTexto = 
                             `
                             <div className="d-flex">                            
-                                <div class="leaflet-title mb-eq card rounded-none">                            
+                                <div class="leaflet-title mb-eq">                            
                                     <h2 class="">${_pLocal}</h2>
                                     <div class="d-flex">
                                         <div class="d-flex mr-eq">  
@@ -263,12 +263,26 @@ const leaflet =() =>{
                                         </div>
                                     </div>
                                     <div>
-                                        <h3>Partículas</h3>
                                         <div class="d-flex my-2">
                                             <h4 class="text-2xl">PM<sub>2.5</sub> - ${parseFloat(elementValue).toFixed(2)} </h4>${nValue}
                                         </div>
                                         <div class="d-flex my-2">
                                             <h4 class="text-2xl">PM<sub>10</sub>  - ${parseFloat(_pm10ug).toFixed(2)} </h4>${pm10Text}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">O<sub>3</sub> - ${parseFloat(_o3ug).toFixed(2)} </h4>${o3Text}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">NO<sub>2</sub> - ${parseFloat(_no2ug).toFixed(2)} </h4>${no2Text}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex my-2">
+                                            <h4 class="text-2xl">CO<sub>2</sub> - ${parseFloat(_coppm).toFixed(2)} </h4>${coPpmmText}
                                         </div>
                                     </div>
                                 </div>

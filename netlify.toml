@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/localhost:4200"
+  to = "https://api.mysearch.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+

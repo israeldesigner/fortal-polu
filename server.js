@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-mongoose.connect(process.env.CONNECTIONSTRING, { dbName: 'db_po', useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.CONNECTIONSTRINGLOCAL, { dbName: 'db_po', useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
-        console.log(process.env.CONNECTIONSTRING);
+        console.log(process.env.CONNECTIONSTRINGLOCAL);
         console.log("conectei a base de dados");
         app.emit("pronto");
     })
@@ -65,7 +65,7 @@ app.use('/converter', express.static(__dirname + '/dist'));
 
 const sessionOptions = session({
     secret: 'fdslsdlsdjkfsjkdlf90f00djajbflfkdllkjfdjlkdfs',
-    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING, dbName: 'db_po' }),
+    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRINGLOCAL, dbName: 'db_po' }),
     resave: false,
     saveUninitialized: false,
     cookie:{
