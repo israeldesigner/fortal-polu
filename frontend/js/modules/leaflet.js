@@ -86,38 +86,38 @@ const leaflet =() =>{
                                 if(elementValue < arrayElements[0]) {
                                     nValue =`
                                     <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />`;
-                                    colorForPm2 = { color:'Green', fillColor: '#adff2f',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/Boa.png', iconRetinaUrl: './assets/img/Boa.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'Green', fillColor: '#37ff00',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/Boa.png', iconRetinaUrl: './assets/img/Boa.png', className: 'leaflet-boa', iconSize:  [40, 40]};
                                 } 
                                 if(elementValue > arrayElements[0] && elementValue < arrayElements[1]) {
                                     nValue = `
                                     <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada" /> `;
-                                    colorForPm2 = { color:'yellow', fillColor: '#ffc801',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/Moderada.png', iconRetinaUrl: './assets/img/Moderada.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'yellow', fillColor: '#ffff63',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/Moderada.png', iconRetinaUrl: './assets/img/Moderada.png', className: 'leaflet-moderada', iconSize:  [40, 40]};
                                 }
                                 if(elementValue > arrayElements[1] && elementValue < arrayElements[2]) {
                                     nValue = `
                                     <img src="./assets/img/ruim.png" class="leaflet-nvalue" alt="imagem qualidade ruim" />`;
-                                    colorForPm2 = { color:'orange', fillColor: '#ffcd03',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/ruim.png', iconRetinaUrl: './assets/img/ruim.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'orange', fillColor: '#ee9f00',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/ruim.png', iconRetinaUrl: './assets/img/ruim.png', className: 'leaflet-ruim', iconSize:  [40, 40]};
                                 }
                                 if(elementValue > arrayElements[2] && elementValue < arrayElements[3]) {
                                     nValue = `
                                     <img src="./assets/img/Muito-ruim.png" class="leaflet-nvalue" alt="imagem qualidade Muito ruim" />`;
-                                    colorForPm2 = { color:'red', fillColor: '#f03',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/Muito-ruim.png', iconRetinaUrl: './assets/img/Muito-ruim.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'red', fillColor: '#ff5959',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/Muito-ruim.png', iconRetinaUrl: './assets/img/Muito-ruim.png', className: 'leaflet-mruim', iconSize:  [40, 40]};
                                 }
                                 if(elementValue > arrayElements[3] && elementValue < arrayElements[4]){
                                     nValue = `
                                     <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />`;
-                                    colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'purple', fillColor: '#ff64ff',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'leaflet-pessima', iconSize:  [40, 40]};
                                 } 
                                 if(elementValue > arrayElements[4]) {
                                     nValue = `
                                     <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada" />`;
-                                    colorForPm2 = { color:'purple', fillColor: '#c904c9',fillOpacity: _fillOpacity, radius: _radius };
-                                    colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'testeClass', iconSize:  [40, 40]};
+                                    colorForPm2 = { color:'purple', fillColor: '#ff64ff',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/pessima.png', iconRetinaUrl: './assets/img/pessima.png', className: 'leaflet-pessima', iconSize:  [40, 40]};
                                 };
     
                                 if(_o3ug < _arrayIndicesO3[0]){
@@ -269,34 +269,34 @@ const leaflet =() =>{
                                                 <th>Medida</th>
                                                 <th>Nível</th>
                                             </tr>
-                                            <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">PM<sub>2.5</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(elementValue).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${nValue}</h4></td>
+                                            <tr style="background: ${colorForPm2.fillColor}">
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(elementValue).toFixed(2)}</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${nValue}</h4></td>
                                             </tr>    
                                             <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">PM<sub>10</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_pm10ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_pm10ug).toFixed(2)}</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
                                                 <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
                                             </tr>    
                                             <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">CO</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_coppm).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-2xl">ppm</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_coppm).toFixed(2)}</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
                                                 <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
                                             </tr>    
                                             <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">O<sub>3</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_o3ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_o3ug).toFixed(2)}</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
                                                 <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
                                             </tr>    
                                             <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">NO<sub>2</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">${parseFloat(_no2ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-2xl">µg/m³</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_no2ug).toFixed(2)}</h4></td>
+                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
                                                 <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
                                             </tr>    
                                         </table>
@@ -390,6 +390,34 @@ const leaflet =() =>{
             }
         };
     }
+    const toggleActive    = document.querySelectorAll('.toggleActive');
+    const toggleDesactive = document.querySelectorAll('.toggleDesactive');
+    const logoPoluentes   = document.querySelectorAll('.logos-poluentes');
+    const btnActiveShow   = document.querySelector('.btnShow');
+
+    // btnActiveShow.addEventListener('click', function(){
+    //     this.classList.toggle("active");
+    // })
+
+    document.querySelectorAll('[data-component~="sidebar"]')
+    .forEach((button) => {
+      button.addEventListener('click', function() {
+        toggleActive.forEach((e, i) =>{
+            e.classList.toggle('hidden');
+        })
+        toggleDesactive.forEach((e,i) => {
+            e.classList.toggle('block');
+        })
+
+        logoPoluentes.forEach((e,i) => {
+            e.classList.toggle('mb-eq');
+        })
+        
+        const elementstarget = document.getElementById(this.dataset.target);
+        elementstarget.classList.toggle('active');
+        
+      })
+    })
 
 }
 

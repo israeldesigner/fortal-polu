@@ -1,9 +1,10 @@
 
-import { script } from './script';
+import { script }    from './script';
 import { colormode } from './colormode';
-import { teste } from './convert';
-import { leaflet } from './leaflet';
-import { mobile } from './mobile';
+import { teste }     from './convert';
+import { leaflet }   from './leaflet';
+import { mobile }    from './mobile';
+import { aside }     from './aside';
 
 
 /**
@@ -26,6 +27,7 @@ ready(function() {
 
     //script jquery
     leaflet();
+    // aside();
     script();
     //mobile
 
