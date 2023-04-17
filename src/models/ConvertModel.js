@@ -90,43 +90,36 @@ class Excel {
 
    async buscaListaLocal(){
      const listaCcd = await ExcelModel.find({ Local: "ccd" }).limit(1).sort({$natural:-1});
-     console.log(listaCcd);
      return listaCcd
    }
 
    async buscaListaSiqueira(){
      const listaSiqueira = await ExcelModel.find({ Local: "siqueira" }).limit(1).sort({$natural:-1});
-     console.log(listaSiqueira);
      return listaSiqueira
    }
 
    async buscaListaEscolaJaburandi(){
      const listaJaburandi = await ExcelModel.find({ Local: "EMEIF Prof. Francisco de Melo Jaborandi" }).limit(1).sort({$natural:-1});
-     console.log(listaJaburandi);
      return listaJaburandi
    }
 
    async buscaListaEscolaDom(){
      const listaDomAloiso = await ExcelModel.find({ Local: "EMEIF Dom Aloísio Lorscheider" }).limit(1).sort({$natural:-1});
-     console.log(listaDomAloiso);
      return listaDomAloiso
    }
 
    async buscaListaEscolaParsifal(){
      const listaParsifalBar = await ExcelModel.find({ Local: "EMEIEF Prof. José Parsifal Barroso" }).limit(1).sort({$natural:-1});
-     console.log(listaParsifalBar);
      return listaParsifalBar;
    }
 
    async buscaListaMuriloSer(){
      const listaMuriloSerpa = await ExcelModel.find({ Local: "EMEF Murilo Serpa" }).limit(1).sort({$natural:-1});
-     console.log(listaMuriloSerpa);
      return listaMuriloSerpa;
    }
 
    async buscaListaEscolaHilberto(){
      const listaHilbertoSilva = await ExcelModel.find({ Local: "Escola Municipal Hilberto Silva" }).limit(1).sort({$natural:-1});
-     console.log(listaHilbertoSilva);
      return listaHilbertoSilva;
    }
 
@@ -138,18 +131,15 @@ class Excel {
 
    async buscaListaEtufor(){
      const buscaListaEtufor = await ExcelModel.find({ Local: "ETUFOR" }).limit(1).sort({$natural:-1});
-     console.log(buscaListaEtufor);
      return buscaListaEtufor;
    }
 
    async buscaListaEstacaoBonfim(){
      const buscaEstacaoBonfim = await ExcelModel.find({ Local: "Estação  Ótavio Bonfim" }).limit(1).sort({$natural:-1});
-     console.log(buscaEstacaoBonfim);
      return buscaEstacaoBonfim;
    }
    async buscaListaEstacaoFatima(){
      const buscaEstacaoFatima = await ExcelModel.find({ Local: "Estação Fátima - BRT" }).limit(1).sort({$natural:-1});
-     console.log(buscaEstacaoFatima);
      return buscaEstacaoFatima;
    }
    async getAllSheets() {

@@ -503,7 +503,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	color: #333;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
 	border-radius: 0px;
-	font-family: 'Alfa Slab One', cursive;
+
 	}
 .leaflet-container a.leaflet-popup-close-button {
 	position: absolute;
@@ -691,19 +691,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	font-size: 1.65rem;
 	margin-bottom: 1.0rem;
 }
-.leaflet-title h3{
-	font-size: 1.65rem;
-	margin-bottom: 1.0rem;
-	font-family: 'Sofia Sans Condensed', sans-serif;
-	font-weight: bolder;
-	border-bottom: 2px solid black;
-}
-.leaflet-title b{
-	font-size: 1.25rem;
-	color: #565656;
-	margin-left: 5px;
-	font-family: 'Sofia Sans Condensed', sans-serif;
-}
 
 .leaflet-title h4{
 	color: #565656;
@@ -730,6 +717,4 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	overflow-y: scroll;
 }
 
-.sidebar__legenda{
-	font-family: 'Sofia Sans Condensed', sans-serif;
-}
+

@@ -1,5 +1,8 @@
 const colormode = () =>{
 
+    const btnToogleDark = document.querySelector('#toggle-darkmode');
+    const btnResetColor = document.querySelector('#reset-darkmode');
+
     const setColorMode = (mode) => {
         // Mode was given
         if (mode) {
@@ -23,10 +26,12 @@ const colormode = () =>{
     }
     
     document.querySelector('#toggle-darkmode').addEventListener('click', (e) => {
+        console.log("dark mode")
         setColorMode(e.target.checked ? 'dark' : 'light');
     });
     
     document.querySelector('#reset-darkmode').addEventListener('click', (e) => {
+        console.log("reset mode")
         e.preventDefault();
         setColorMode(false);
     });
@@ -52,6 +57,7 @@ const colormode = () =>{
     if ((colorModeOverride == 'dark') || (!hasColorModeOverride && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.querySelector('#toggle-darkmode').checked = true;
     }
+
 }
 
 export {colormode};
