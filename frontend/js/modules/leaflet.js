@@ -27,6 +27,7 @@ const leaflet =() =>{
         let colorMarkerPm2;
         let blocoTexto;
         let markerPoint;
+        let blocTextGray;
         const _radius = 250;
         const _fillOpacity = 0.5;
         
@@ -64,7 +65,7 @@ const leaflet =() =>{
                             let _o3ug = lastElement.O3ug;
     
                             const arrayLatLong = [lastElement.Latitude, lastElement.Longitude];
-                            const _arrayIndicesPm2u  = [7, 50, 75, 125, 300];
+                            const _arrayIndicesPm2u  = [25, 50, 75, 125, 300];
                             const _arrayIndicesO3    = [100,130,160,200,800];
                             const _arrayIndicesPm10  = [50,100,150,250,600];
                             const _arrayIndicesCoppm = [10, 12, 14, 16, 50];
@@ -83,10 +84,16 @@ const leaflet =() =>{
                             }
                             
                             const cheElementsInd = (elementValue, arrayElements, elementName) =>{
-                                if(elementValue < arrayElements[0]) {
+                                if(elementValue < 1) {
+                                    nValue =`
+                                    <img src="./assets/img/Semponto.png" class="leaflet-nvalue" alt="sem ponto" />`;
+                                    colorForPm2 = { color:'Gray', fillColor: '#e4e4e4',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorMarkerPm2 = { iconUrl: './assets/img/Semponto.png', iconRetinaUrl: './assets/img/Semponto.png', iconSize:  [40, 40]};
+                                } 
+                                if(elementValue > 1 && elementValue < arrayElements[0]) {
                                     nValue =`
                                     <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa" />`;
-                                    colorForPm2 = { color:'Green', fillColor: '#37ff00',fillOpacity: _fillOpacity, radius: _radius };
+                                    colorForPm2 = { color:'Green', fillColor: '#8ae271',fillOpacity: _fillOpacity, radius: _radius };
                                     colorMarkerPm2 = { iconUrl: './assets/img/Boa.png', iconRetinaUrl: './assets/img/Boa.png', className: 'leaflet-boa', iconSize:  [40, 40]};
                                 } 
                                 if(elementValue > arrayElements[0] && elementValue < arrayElements[1]) {
@@ -245,64 +252,79 @@ const leaflet =() =>{
                                 }
     
                                 let blocoUmidade = `${parseFloat(_humidity).toFixed(0)}%`;
-                                let checkHumi = !isNaN(_humidity) ? blocoUmidade : blocoUmidade = `-`;  
-    
-                                blocoTexto = 
-                                `
-                                <div className="d-flex">                            
-                                    <div class="leaflet-title">                            
-                                        <h2 class="d-flex"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" class="mr-2" width="22" alt="marker">${_pLocal}</h2>
-                                        <div class="d-flex mb-eq">
-                                            <div class="d-flex mr-eq">  
-                                                <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
-                                                <strong class="blue-hum"> ${parseFloat(_exTmp).toFixed(0)}ºC</strong>
+                                let checkHumi = !isNaN(_humidity) ? blocoUmidade : blocoUmidade = `-`;
+
+                                if(elementValue > 1){
+                                    blocoTexto = 
+                                    `
+                                    <div className="d-flex">                            
+                                        <div class="leaflet-title">                            
+                                            <h2 class="d-flex"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" class="mr-2" width="22" alt="marker">${_pLocal}</h2>
+                                            <div class="d-flex mb-eq">
+                                                <div class="d-flex mr-eq">  
+                                                    <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
+                                                    <strong class="blue-hum"> ${parseFloat(_exTmp).toFixed(0)}ºC</strong>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" /> 
+                                                    <strong class="orange-temp">${checkHumi} </strong>
+                                                </div>
                                             </div>
-                                            <div class="d-flex">
-                                                <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" /> 
-                                                <strong class="orange-temp">${checkHumi} </strong>
+                                            <table class="table-auto w-full">
+                                                <tr class="text-xl">
+                                                    <th>Poluentes</th>
+                                                    <th>Valores</th>
+                                                    <th>Medida</th>
+                                                    <th>Nível</th>
+                                                </tr>
+                                                <tr style="background: ${colorForPm2.fillColor}">
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(elementValue).toFixed(2)}</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${nValue}</h4></td>
+                                                </tr>    
+                                                <tr>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_pm10ug).toFixed(2)}</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
+                                                </tr>    
+                                                <tr>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_coppm).toFixed(2)}</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
+                                                </tr>    
+                                                <tr>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_o3ug).toFixed(2)}</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
+                                                </tr>    
+                                                <tr>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_no2ug).toFixed(2)}</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                    <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
+                                                </tr>    
+                                            </table>
                                             </div>
+                                            </div>
+                                            `;
+                                } else{
+                                    blocoTexto = `
+                                    <div className="d-flex">                            
+                                        <div class="leaflet-title">                            
+                                            <h2 class="d-flex"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
+                                            class="mr-2" width="22" alt="marker">${_pLocal}
+                                            </h2>
+                                            <p>
+                                                Monitor a ser instalado
+                                            </p>
                                         </div>
-                                        <table class="table-auto w-full">
-                                            <tr class="text-xl">
-                                                <th>Poluentes</th>
-                                                <th>Valores</th>
-                                                <th>Medida</th>
-                                                <th>Nível</th>
-                                            </tr>
-                                            <tr style="background: ${colorForPm2.fillColor}">
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(elementValue).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${nValue}</h4></td>
-                                            </tr>    
-                                            <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_pm10ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
-                                            </tr>    
-                                            <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_coppm).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
-                                            </tr>    
-                                            <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_o3ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
-                                            </tr>    
-                                            <tr>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(_no2ug).toFixed(2)}</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
-                                            </tr>    
-                                        </table>
-                                        </div>
-                                        </div>
-                                        `;
+                                    </div>
+                                    `
+                                }
                             }
                                         // <div style="margin-top:1.5rem;">
                                         //     <div class="d-flex my-2">
@@ -394,6 +416,7 @@ const leaflet =() =>{
     const toggleDesactive = document.querySelectorAll('.toggleDesactive');
     const logoPoluentes   = document.querySelectorAll('.logos-poluentes');
     const btnActiveShow   = document.querySelector('.btnShow');
+    const cardsAside      = document.querySelectorAll('.aside__card');
 
     // btnActiveShow.addEventListener('click', function(){
     //     this.classList.toggle("active");
@@ -411,6 +434,10 @@ const leaflet =() =>{
 
         logoPoluentes.forEach((e,i) => {
             e.classList.toggle('mb-eq');
+        })
+
+        cardsAside.forEach((e,i) => {
+            e.classList.toggle('card');
         })
         
         const elementstarget = document.getElementById(this.dataset.target);

@@ -1,6 +1,6 @@
 import '@/scss/index.scss';
-import '@/css/style.css';
 import '@/css/leaflet.css';
+import '@/css/style.css';
 
 import '../node_modules/leaflet/dist/leaflet';
 

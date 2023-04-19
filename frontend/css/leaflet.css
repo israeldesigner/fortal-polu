@@ -679,8 +679,35 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-radius: 100%;
 }
 .leaflet-pessima{
-	border: 2px solid #ff64ff;
+	border: 2px solid #c62ee9;
 	border-radius: 100%;
+}
+
+.aside__escala{
+	padding-bottom: 15px;
+}
+
+.progress-bar{
+	font-size:small ;
+	width: 120px;
+	padding: 10px;
+	text-align: center;
+}
+
+.progressBoa{
+	background: #8ae271;
+}
+.progressModerada{
+	background: #ffff63 ;
+}
+.progressRuim{
+	background: #ee9f00 ;
+}
+.progressMruim{
+	background: #ff5959 ;
+}
+.progressPessima{
+	background: #c62ee9 ;
 }
 
 .leaflet-bloco{
