@@ -9,6 +9,10 @@
 	align-items: center;
 }
 
+.br{
+	border: 1px solid red;
+}
+
 .mr-eq{
 	margin-right: .75rem;
 }
