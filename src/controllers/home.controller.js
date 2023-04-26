@@ -11,30 +11,56 @@ exports.apiExcel = async (req, res) => {
     let jsonObject = {}
     const excel = new Excel();
 
-    const tablesCcd = await excel.buscaListaLocal();
-    const tablesSiquera = await excel.buscaListaSiqueira();
-    const tablesJaburandi = await excel.buscaListaEscolaJaburandi();
-    const tablesEscolasDom = await excel.buscaListaEscolaDom();
-    const tablesEscolaParsifal = await excel.buscaListaEscolaParsifal();
-    const tablesHilberto = await excel.buscaListaEscolaHilberto();
-    const tablesEscolaConsuelo = await excel.buscaListaEscolaConsuelo();
-    const tablesMurilo = await excel.buscaListaMuriloSer();
-    const tablesEtufor = await excel.buscaListaEtufor();
-    const tableEstacaoBonfim = await excel.buscaListaEstacaoBonfim();
-    const tableEstacaoFatima = await excel.buscaListaEstacaoFatima();
+    const tablesThomaz = await excel.buscaListaThomaz();
+    const tablesHelder = await excel.buscaHelderCam();
+    const tableMajorAs = await excel.buscaMajorAssis();
+    const tableDomLust = await excel.buscaDomLustosa();
+    const tablesHilSil = await excel.buscaHilbertoSilva();
+    const tableConsAmo = await excel.buscaConsueloAmora();
+    const tablebaraoSo = await excel.buscaBaraoSobral();
+    const tableCezarCa = await excel.buscaCezarCals();
+    const tableGioSilv = await excel.buscaGiomarSilva();
+    const tableBezerMe = await excel.buscaBezerraMenezes();
+    const tablePraPort = await excel.buscaPracaPortugal();
+    const tablePraLago = await excel.buscaPracaLagoinha();
+    const tableNautico = await excel.buscaNautico();
+    const tablePraFati = await excel.buscaPracaFatima();
+    const tableLeoMour = await excel.buscaLeonelMoura();
+    const tablePedAlen = await excel.buscaPedroDeAlencar();
+    const tableIsabFer = await excel.buscaIsabelFerreira();
+    const tableBeirMar = await excel.buscaBeiraMar();
+    const tableBusLago = await excel.buscaLagoaZeza();
+    const tableExpedic = await excel.buscaExpedicionarios();
+    const tableGodoFre = await excel.buscaGodofredoCastro();
+    const tableKubiche = await excel.buscaKubitschek();
+    const tableJoseWal = await excel.buscaJoseWalte();
+    
 
     jsonObject = { 
-        tablesCcd, 
-        tablesSiquera,
-        tablesJaburandi,
-        tablesEscolasDom,
-        tablesEscolaParsifal,
-        tablesHilberto,
-        tablesEscolaConsuelo,
-        tablesMurilo,
-        tablesEtufor,
-        tableEstacaoBonfim,
-        tableEstacaoFatima
+        tablesThomaz,
+        tablesHelder,
+        tableMajorAs,
+        tableDomLust,
+        tableConsAmo,
+        tablebaraoSo,
+        tablesHilSil,
+        tableCezarCa,
+        tableGioSilv,
+        tableBezerMe,
+        tablePraPort,
+        tablePraLago,
+        tableNautico,
+        tablePraFati,
+        tableLeoMour,
+        tablePedAlen,
+        tableIsabFer,
+        tableBeirMar,
+        tableBusLago,
+        tableExpedic,
+        tableGodoFre,
+        tableKubiche,
+        tableJoseWal
+        
     };
     res.json(jsonObject);
 }

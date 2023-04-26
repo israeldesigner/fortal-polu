@@ -88,59 +88,126 @@ class Excel {
     });
    }
 
-   async buscaListaLocal(){
-     const listaCcd = await ExcelModel.find({ Local: "ccd" }).limit(1).sort({$natural:-1});
-     return listaCcd
+   checkString (strLocal, subStrLocal) {
+    console.log(strLocal.indexOf(subStrLocal) !== -1); // true
+   }
+   //{ "$regex": "Alex", "$options": "i" }
+
+   async buscaListaThomaz(){
+     const listaCcd = await ExcelModel.find({ Local:/Thomaz/i  }).limit(1).sort({$natural:-1});
+     return listaCcd;
    }
 
-   async buscaListaSiqueira(){
-     const listaSiqueira = await ExcelModel.find({ Local: "siqueira" }).limit(1).sort({$natural:-1});
-     return listaSiqueira
+   async buscaHelderCam(){
+     const listaHelderCam = await ExcelModel.find({ Local:/Hélder/i }).limit(1).sort({$natural:-1});
+     return listaHelderCam;
    }
 
-   async buscaListaEscolaJaburandi(){
-     const listaJaburandi = await ExcelModel.find({ Local: "EMEIF Prof. Francisco de Melo Jaborandi" }).limit(1).sort({$natural:-1});
-     return listaJaburandi
+   async buscaMajorAssis(){
+    const listaMajorAssis = await ExcelModel.find({ Local:/Major Assis/i}).limit(1).sort({$natural:-1});
+    return listaMajorAssis;
    }
 
-   async buscaListaEscolaDom(){
-     const listaDomAloiso = await ExcelModel.find({ Local: "EMEIF Dom Aloísio Lorscheider" }).limit(1).sort({$natural:-1});
-     return listaDomAloiso
+   async buscaDomLustosa(){
+    const listaDomLustosa = await ExcelModel.find({ Local:/Dom Lustosa/i}).limit(1).sort({$natural:-1});
+    return listaDomLustosa;
    }
 
-   async buscaListaEscolaParsifal(){
-     const listaParsifalBar = await ExcelModel.find({ Local: "EMEIEF Prof. José Parsifal Barroso" }).limit(1).sort({$natural:-1});
-     return listaParsifalBar;
+   async buscaHilbertoSilva(){
+    const listaHilbertoSil = await ExcelModel.find({ Local:/Hilberto Silva/i}).limit(1).sort({$natural:-1});
+    return listaHilbertoSil;
    }
 
-   async buscaListaMuriloSer(){
-     const listaMuriloSerpa = await ExcelModel.find({ Local: "EMEF Murilo Serpa" }).limit(1).sort({$natural:-1});
-     return listaMuriloSerpa;
+   async buscaConsueloAmora(){
+    const listaConsueloAmo = await ExcelModel.find({ Local:/Consuelo Amora/i}).limit(1).sort({$natural:-1});
+    return listaConsueloAmo;
    }
 
-   async buscaListaEscolaHilberto(){
-     const listaHilbertoSilva = await ExcelModel.find({ Local: "Escola Municipal Hilberto Silva" }).limit(1).sort({$natural:-1});
-     return listaHilbertoSilva;
+   async buscaBaraoSobral(){
+    const listaBaraoSob = await ExcelModel.find({ Local:/Barão de Sobral/i}).limit(1).sort({$natural:-1});
+    return listaBaraoSob;
    }
 
-   async buscaListaEscolaConsuelo(){
-     const listaConsueloAmora = await ExcelModel.find({ Local: "EMEIEF Profa. Consuelo Amora" }).limit(1).sort({$natural:-1});
-     return listaConsueloAmora;
+   async buscaCezarCals(){
+    const listaCezarCals = await ExcelModel.find({ Local:/César Cals/i}).limit(1).sort({$natural:-1});
+    return listaCezarCals;
    }
 
-   async buscaListaEtufor(){
-     const buscaListaEtufor = await ExcelModel.find({ Local: "ETUFOR" }).limit(1).sort({$natural:-1});
-     return buscaListaEtufor;
+   async buscaGiomarSilva(){
+    const listaGiomarSilv = await ExcelModel.find({ Local:/Guiomar da Silva/i}).limit(1).sort({$natural:-1});
+    return listaGiomarSilv;
    }
 
-   async buscaListaEstacaoBonfim(){
-     const buscaEstacaoBonfim = await ExcelModel.find({ Local: "Estação  Ótavio Bonfim" }).limit(1).sort({$natural:-1});
-     return buscaEstacaoBonfim;
+   async buscaBezerraMenezes(){
+    const listaBezerraMen = await ExcelModel.find({ Local:/José Jatahy/i}).limit(1).sort({$natural:-1});
+    return listaBezerraMen;
    }
-   async buscaListaEstacaoFatima(){
-     const buscaEstacaoFatima = await ExcelModel.find({ Local: "Estação Fátima - BRT" }).limit(1).sort({$natural:-1});
-     return buscaEstacaoFatima;
+
+   async buscaPracaPortugal(){
+    const listaPracaPortu = await ExcelModel.find({ Local:/Praça Portugal/i}).limit(1).sort({$natural:-1});
+    return listaPracaPortu;
    }
+
+   async buscaNautico(){
+    const listaNautico = await ExcelModel.find({ Local:/Nautico/i}).limit(1).sort({$natural:-1});
+    return listaNautico;
+   }
+
+   async buscaPracaLagoinha(){
+    const listaPracaLagoinha = await ExcelModel.find({ Local:/Praça da Lagoinha/i}).limit(1).sort({$natural:-1});
+    return listaPracaLagoinha;
+   }
+
+   async buscaPracaFatima(){
+    const listaPracaFatima = await ExcelModel.find({ Local:/de Fátima/i}).limit(1).sort({$natural:-1});
+    return listaPracaFatima;
+   }
+
+   async buscaLeonelMoura(){
+    const listaLeonelMoura = await ExcelModel.find({ Local:/Leonel de Moura/i}).limit(1).sort({$natural:-1});
+    return listaLeonelMoura;
+   }
+
+   async buscaPedroDeAlencar(){
+    const listaPedroDeAlencar = await ExcelModel.find({ Local:/Pedro de Alencar/i}).limit(1).sort({$natural:-1});
+    return listaPedroDeAlencar;
+   }
+
+   async buscaIsabelFerreira(){
+    const listaIsabelFerreira = await ExcelModel.find({ Local:/Isabel Ferreira/i}).limit(1).sort({$natural:-1});
+    return listaIsabelFerreira;
+   }
+
+   async buscaBeiraMar(){
+    const listaBeiraMar = await ExcelModel.find({ Local:/Beira Mar/i}).limit(1).sort({$natural:-1});
+    return listaBeiraMar;
+   }
+
+   async buscaLagoaZeza(){
+    const listaLagoaZeza = await ExcelModel.find({ Local:/Lagoa da Zeza/i}).limit(1).sort({$natural:-1});
+    return listaLagoaZeza;
+   }
+
+   async buscaExpedicionarios(){
+    const listaExpedicionarios = await ExcelModel.find({ Local:/Expedicionários/i}).limit(1).sort({$natural:-1});
+    return listaExpedicionarios;
+   }
+
+   async buscaKubitschek (){
+    const listaKubitschek = await ExcelModel.find({ Local:/Kubitschek/i}).limit(1).sort({$natural:-1});
+    return listaKubitschek;
+   }
+
+   async buscaGodofredoCastro(){
+    const listaGodofredCast = await ExcelModel.find({ Local:/Godofredo de Castro/i}).limit(1).sort({$natural:-1});
+    return listaGodofredCast;
+   }
+
+   async buscaJoseWalte(){
+    const listaJoseWalter = await ExcelModel.find({ Local:/José Walter/i}).limit(1).sort({$natural:-1});
+    return listaJoseWalter;
+   }
+
    async getAllSheets() {
      const allSheets = await ExcelModel.find().limit(1).sort({$natural:-1});
      console.log(allSheets);
