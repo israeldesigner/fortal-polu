@@ -125,7 +125,6 @@ class Excel {
 
    async buscaListaEscolaConsuelo(){
      const listaConsueloAmora = await ExcelModel.find({ Local: "EMEIEF Profa. Consuelo Amora" }).limit(1).sort({$natural:-1});
-     console.log(listaConsueloAmora);
      return listaConsueloAmora;
    }
 
@@ -143,7 +142,8 @@ class Excel {
      return buscaEstacaoFatima;
    }
    async getAllSheets() {
-     const allSheets = await ExcelModel.find().limit();
+     const allSheets = await ExcelModel.find().limit(1).sort({$natural:-1});
+     console.log(allSheets);
      return allSheets;
    }
 

@@ -90,7 +90,7 @@ app.use(routes);
 
 app.on('pronto', () => {
     app.listen(`${PORT}`, () => {
-        console.log('acessar http://localhost:4200')
+        console.log('acessar http://localhost:3000')
         console.log("servidor está executando");
     });
 })

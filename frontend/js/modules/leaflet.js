@@ -273,7 +273,7 @@ const leaflet =() =>{
                                             <table class="table-auto w-full">
                                                 <tr class="text-xl">
                                                     <th>Poluentes</th>
-                                                    <th>Valores</th>
+                                                    <th>Valores*</th>
                                                     <th>Medida</th>
                                                     <th>Nível</th>
                                                 </tr>
@@ -309,8 +309,9 @@ const leaflet =() =>{
                                                 </tr>    
                                             </table>
                                             </div>
-                                            </div>
-                                            `;
+                                            <em class="sofia-font text-xs">*No momento os dados dos medidores são fictícios por questão de medidores a serem instalados</em>
+                                        </div>
+                                        `;
                                 } else{
                                     blocoTexto = `
                                     <div className="d-flex">                            
