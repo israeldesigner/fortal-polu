@@ -1,27 +1,36 @@
 /* eslint-disable no-undef */
-require('dotenv').config();
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-const mongoose = require('mongoose');
-mongoose.connect(process.env.CONNECTIONSTRINGLOCAL, { dbName: 'db_po', useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => {
-        console.log(process.env.CONNECTIONSTRINGLOCAL);
-        console.log("conectei a base de dados");
-        app.emit("pronto");
-    })
-    .catch((e) => console.log(e));
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const PORT = process.env.PORT || 3000
+const mongoose = require('mongoose')
+mongoose
+  .connect(process.env.CONNECTIONSTRING, {
+    dbName: 'db_po',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log(process.env.CONNECTIONSTRING)
+    console.log('conectei a base de dados')
+    app.emit('pronto')
+  })
+  .catch((e) => console.log(e))
 
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-const flash = require('connect-flash');
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+const flash = require('connect-flash')
 
-const routes = require('./route.js');
-const path = require('path');
-const helmet = require('helmet');
-const multer = require('multer');
-const csrf = require('csurf');
-const {middleWareGlobal, checkCsrfError, csrfMiddleware} = require ('./src/middlewares/middleware.js');
+const routes = require('./route.js')
+const path = require('path')
+const helmet = require('helmet')
+const multer = require('multer')
+const csrf = require('csurf')
+const {
+  middleWareGlobal,
+  checkCsrfError,
+  csrfMiddleware,
+} = require('./src/middlewares/middleware.js')
 
 // app.use(helmet());
 // Configuração de armazenamento
@@ -43,54 +52,49 @@ const {middleWareGlobal, checkCsrfError, csrfMiddleware} = require ('./src/middl
 //     }
 // });
 
-
-const storage = multer.diskStorage({  
-    destination:(req,file,cb)=>{  
-    cb(null,'uploads/');  
-    },  
-    filename:(req,file,cb)=>{  
-    cb(null,file.originalname);  
-    }  
-}); 
-
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/')
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname)
+  },
+})
 
 app.use(multer({ storage }).single('foto'))
 
-
-
-app.use(express.json());
-app.use(express.urlencoded({  extend: true }));
-app.use(express.static(path.resolve(__dirname, 'dist')));
-app.use('/cadastro', express.static(__dirname + '/dist'));
-app.use('/converter', express.static(__dirname + '/dist'));
+app.use(express.json())
+app.use(express.urlencoded({ extend: true }))
+app.use(express.static(path.resolve(__dirname, 'dist')))
+app.use('/cadastro', express.static(__dirname + '/dist'))
+app.use('/converter', express.static(__dirname + '/dist'))
 
 const sessionOptions = session({
-    secret: 'fdslsdlsdjkfsjkdlf90f00djajbflfkdllkjfdjlkdfs',
-    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRINGLOCAL, dbName: 'db_po' }),
-    resave: false,
-    saveUninitialized: false,
-    cookie:{
-        maxAge:1000 * 60 * 60 * 24 * 7,
-        httpOnly: true
-    }
+  secret: 'fdslsdlsdjkfsjkdlf90f00djajbflfkdllkjfdjlkdfs',
+  store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING, dbName: 'db_po' }),
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true,
+  },
 })
 
-app.use(sessionOptions);
-app.use(flash());
+app.use(sessionOptions)
+app.use(flash())
 
+app.set('views', path.resolve(__dirname, 'src', 'views'))
+app.set('view engine', 'ejs')
 
-app.set('views', path.resolve(__dirname, 'src', 'views'));
-app.set('view engine', 'ejs');
-
-app.use(csrf());
-app.use(middleWareGlobal);
-app.use(checkCsrfError);
-app.use(csrfMiddleware);
-app.use(routes);
+app.use(csrf())
+app.use(middleWareGlobal)
+app.use(checkCsrfError)
+app.use(csrfMiddleware)
+app.use(routes)
 
 app.on('pronto', () => {
-    app.listen(`${PORT}`, () => {
-        console.log('acessar http://localhost:3000')
-        console.log("servidor está executando");
-    });
+  app.listen(`${PORT}`, () => {
+    console.log('acessar http://localhost:3000')
+    console.log('servidor está executando')
+  })
 })
