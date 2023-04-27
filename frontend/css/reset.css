@@ -1,33 +1,38 @@
-
-
-.sofia-font{
-	font-family: 'Sofia Sans Condensed', sans-serif;
+.sofia-font {
+  font-family: 'Sofia Sans Condensed', sans-serif;
 }
 
-.d-flex{
-	display: flex;
-	align-items: center;
+.d-flex {
+  display: flex;
+  align-items: center;
 }
 
-.br{
-	border: 1px solid red;
+.br {
+  border: 1px solid red;
 }
 
-.mr-eq{
-	margin-right: .75rem;
+.mr-eq {
+  margin-right: 0.75rem;
 }
-.ml-eq{
-	margin-left: 1.0rem;
+.ml-eq {
+  margin-left: 1rem;
 }
-.mt-eq{
-	margin-top: 1.0rem;
+.mt-eq {
+  margin-top: 1rem;
 }
-.mb-eq{
-	margin-bottom: 1.0rem;
+.mb-eq {
+  margin-bottom: 1rem;
 }
 
-.font-size2{
-	font-size: 1.5rem;
+.mb-05 {
+  margin-bottom: 0.875rem;
+}
+.mt-05 {
+  margin-top: 0.875rem;
+}
+
+.font-size2 {
+  font-size: 1.5rem;
 }
 
 /* .card{
