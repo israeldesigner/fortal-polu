@@ -1,4 +1,4 @@
-<div class="sidebar" id="sidebar">
+<div class="sidebar active" id="sidebar">
   <div class="menuIcon"><%- include('icon-menu') %></div>
   <img
     src="./assets/img/icon-pref.png"
@@ -13,7 +13,7 @@
       width="200"
       alt="Logo Prefeitura de Fortaleza"
       style="margin-bottom: 20px"
-      class="toggleActive"
+      class="toggleDesactive"
     />
     <!-- <div>
           <a id="reset-darkmode" href="#" title="Clear Dark Mode Override"><small>(reset)</small></a></h1>
@@ -22,7 +22,7 @@
         </div> -->
   </div>
   <!-- <h3 class="my-3 text-2xl">Legenda</h3> -->
-  <h3 class="text-lg toggleActive"><b>Níveis</b></h3>
+  <h3 class="text-lg toggleDesactive"><b>Níveis</b></h3>
   <div class="card aside__card rounded-none sofia-font my-2 mb-eq">
     <div class="d-flex mb-eq">
       <img src="./assets/img/Boa.png" width="32" class="mr-eq" /> <strong>N1 - Bom</strong>
@@ -53,10 +53,10 @@
     <div class="logos-poluentes">
       <img src="./assets/img/extemp.png" width="22" class="mr-eq" alt="Temperatura" />
     </div>
-    <h3 class="text-lg toggleActive"><b>Temperatura ambiente (ºC)</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Temperatura ambiente (ºC)</b></h3>
   </div>
   <div class="card aside__card rounded-md sofia-font mb-eq">
-    <article class="toggleActive textTemp">
+    <article class="toggleDesactive textTemp">
       <img id="soundTemp" src="./assets/img/sound_final.png" alt="icone sound" width="32" />
       <p class="textTemp">Temperatura do ar no ambiente medido.</p>
     </article>
@@ -65,21 +65,21 @@
     <div class="logos-poluentes">
       <img src="./assets/img/umidade.png" width="30" class="mr-eq" alt="Temperatura" />
     </div>
-    <h3 class="text-lg toggleActive"><b>Umidade relativa (%)</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Umidade relativa (%)</b></h3>
   </div>
   <div class="card aside__card rounded-md sofia-font mb-eq">
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       Relação entre a quantidade de água existente no ar e a quantidade máxima que poderia haver na
       mesma temperatura.
     </article>
   </div>
 
-  <h3 class="text-lg toggleActive"><b>Micro partículas</b></h3>
+  <h3 class="text-lg toggleDesactive"><b>Micro partículas</b></h3>
   <div class="card aside__card rounded-none sofia-font mb-eq">
     <div class="logos-poluentes">
       <img src="./assets/img/pm25.png" width="30" alt="pm2.5" />
     </div>
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       Podem ser definidas de maneira simplificada como aquelas cujo diâmetro aerodinâmico é menor ou
       igual a 2,5 µm. or causa do seu tamanho diminuto, penetram profundamente no sistema
       respiratório, podendo atingir os alvéolos pulmonares.
@@ -112,7 +112,7 @@
     <div class="logos-poluentes">
       <img src="./assets/img/pm10.png" width="30" alt="pm10" />
     </div>
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       Podem ser definidas de maneira simplificada como aquelas cujo diâmetro aerodinâmico é menor ou
       igual a 10 µm. Dependendo da distribuição de tamanho na faixa de 0 a 10 µm, podem ficar
       retidas na parte superior do sistema respiratório ou penetrar mais profundamente, alcançando
@@ -148,10 +148,10 @@
     <div class="logos-poluentes">
       <img src="./assets/img/co2.png" width="30" class="mr-eq" alt="Monóxido de carbono" />
     </div>
-    <h3 class="text-lg toggleActive"><b>Monóxido de Carbono</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Monóxido de Carbono</b></h3>
   </div>
   <div class="card aside__card rounded-md sofia-font mb-eq">
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       É um gás incolor e inodoro que resulta da queima incompleta de combustíveis de origem orgânica
       (combustíveis fósseis, biomassa etc.). Em geral é encontrado em maiores concentrações nas
       cidades, emitido principalmente por veículos automotores. Altas concentrações de CO são
@@ -187,10 +187,10 @@
     <div class="logos-poluentes">
       <img src="./assets/img/o3.png" width="30" class="mr-eq" alt="Ozônio" />
     </div>
-    <h3 class="text-lg toggleActive"><b>Ozônio</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Ozônio</b></h3>
   </div>
   <div class="card aside__card rounded-none sofia-font mb-eq">
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       Além de prejuízos à saúde, o ozônio pode causar danos à vegetação. É sempre bom ressaltar que
       o ozônio encontrado na faixa de ar próxima do solo, onde respiramos, chamado de “mau ozônio”,
       é tóxico. Entretanto, na estratosfera (cerca de 25 km de altitude) o ozônio tem a importante
@@ -226,10 +226,10 @@
     <div class="logos-poluentes">
       <img src="./assets/img/no2.png" width="30" class="mr-eq" alt="Dióxido de nitrogênio" />
     </div>
-    <h3 class="text-lg toggleActive"><b>Dióxido de nitrogênio</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Dióxido de nitrogênio</b></h3>
   </div>
   <div class="card aside__card rounded-none sofia-font my-2 mb-eq">
-    <article class="toggleActive">
+    <article class="toggleDesactive">
       É formado durante processos de combustão. Em grandes cidades, os veículos geralmente são os
       principais responsáveis pela emissão dos óxidos de nitrogênio. O NO, sob a ação de luz solar
       se transforma em NO2, que tem papel importante na formação de oxidantes fotoquímicos como o
