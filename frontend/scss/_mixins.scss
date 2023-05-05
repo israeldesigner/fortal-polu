@@ -1,35 +1,27 @@
 
-.container {
-
+@mixin for-phone-only {
+  @media (max-width: 540px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (max-width: 768px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (max-width: 991px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1266px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1600px) { @content; }
 }
 
-.sidebar {
-  /* background:rgba(255, 255, 255, 0.0); */
-  background:rgba(255, 255, 255, 1.0);
-  width:300px;
-  position:fixed;
-  top:0;
-  right:0px;
-  height:100%;
-  box-shadow:0 3px 8px rgba(0,0,0,0.35);
-  padding-top:10px;
-  padding-left: 20px;
-  padding-right: 10px;
-  transition:all 0.3s ease-out;
-  z-index: 1000;
-  overflow-y: scroll;
-  transition: .2s ease;
-  &.active{
-    right: -240px;
-    transition: .2s ease;
+/* Custom Mixins -------------------- */
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
   }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
 }
 
-.toggleDesactive{
-  display: none;
-}
-
-.btnSideBar{
-  opacity: .75;
-  margin-bottom: 20px;
-} 

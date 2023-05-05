@@ -6,15 +6,44 @@ h1,h2,h3,h4,h5,h6, .leaflet-popup-content{
 	font-family: 'Alfa Slab One';
 }
 
-.sidebar{
+.sidebar {
+	/* background:rgba(255, 255, 255, 0.0); */
 	font-family: 'Sofia Sans Condensed';
 	h3{
 		font-family: 'Sofia Sans Condensed';
 	}
+	background:rgba(255, 255, 255, 1.0);
+	width:300px;
+	position:fixed;
+	top:0;
+	right:0px;
+	height:100%;
+	box-shadow:0 3px 8px rgba(0,0,0,0.35);
+	padding-top:10px;
+	padding-left: 20px;
+	padding-right: 10px;
+	transition:all 0.3s ease-out;
+	z-index: 1000;
+	overflow-y: scroll;
+	transition: .2s ease;
+	&.active{
+	  right: -240px;
+	  transition: .2s ease;
+	}
 	.card{
 		color: $font-body__color !important;
 	}
-}
+
+  }
+  
+  .toggleDesactive{
+	display: none;
+  }
+  
+  .btnSideBar{
+	opacity: .75;
+	margin-bottom: 20px;
+  } 
 
 .left-side{
 
@@ -45,4 +74,21 @@ h1,h2,h3,h4,h5,h6, .leaflet-popup-content{
 		background: rgba(255, 255, 255, .65);
 	}
 }
+
+.icons-sponsor{
+	span{
+		@include circle(32px);
+		display: flex;
+		justify-content: center;
+    	align-items: center;
+		border: 2px solid $font-color;
+		cursor: pointer;
+		&:hover{
+			opacity: .70;
+		}
+	}
+}
+
+
+
 

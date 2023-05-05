@@ -2,7 +2,7 @@
   <div class="menuIcon"><%- include('icon-menu') %></div>
   <img
     src="./assets/img/icon-pref.png"
-    class="toggleDesactive"
+    class="toggleActive"
     style="margin-bottom: 20px; margin-left: -8px"
     width="45"
     alt="icon-pref"
@@ -22,8 +22,13 @@
         </div> -->
   </div>
   <!-- <h3 class="my-3 text-2xl">Legenda</h3> -->
+  <!-- <button id="button" aria-describedby="tooltip">My button</button>
+  <div id="tooltip" role="tooltip">
+    My tooltip
+    <div id="arrow" data-popper-arrow></div>
+  </div> -->
   <h3 class="text-lg toggleDesactive"><b>Níveis</b></h3>
-  <div class="card aside__card rounded-none sofia-font my-2 mb-eq">
+  <div class="aside__card rounded-none sofia-font my-2 mb-eq">
     <div class="d-flex mb-eq">
       <img src="./assets/img/Boa.png" width="32" class="mr-eq" /> <strong>N1 - Bom</strong>
     </div>
@@ -55,7 +60,7 @@
     </div>
     <h3 class="text-lg toggleDesactive"><b>Temperatura ambiente (ºC)</b></h3>
   </div>
-  <div class="card aside__card rounded-md sofia-font mb-eq">
+  <div class="aside__card rounded-md sofia-font mb-eq">
     <article class="toggleDesactive textTemp">
       <img id="soundTemp" src="./assets/img/sound_final.png" alt="icone sound" width="32" />
       <p class="textTemp">Temperatura do ar no ambiente medido.</p>
@@ -67,7 +72,7 @@
     </div>
     <h3 class="text-lg toggleDesactive"><b>Umidade relativa (%)</b></h3>
   </div>
-  <div class="card aside__card rounded-md sofia-font mb-eq">
+  <div class="aside__card rounded-md sofia-font mb-eq">
     <article class="toggleDesactive">
       Relação entre a quantidade de água existente no ar e a quantidade máxima que poderia haver na
       mesma temperatura.
@@ -75,8 +80,8 @@
   </div>
 
   <h3 class="text-lg toggleDesactive"><b>Micro partículas</b></h3>
-  <div class="card aside__card rounded-none sofia-font mb-eq">
-    <div class="logos-poluentes">
+  <div class="aside__card rounded-none sofia-font mb-eq">
+    <div class="logos-poluentes mb-eq">
       <img src="./assets/img/pm25.png" width="30" alt="pm2.5" />
     </div>
     <article class="toggleDesactive">
@@ -109,7 +114,7 @@
       </div>
     </article>
     <!-- <h3 class="text-xl"><b>PM<sub>10</sub></b></h3> -->
-    <div class="logos-poluentes">
+    <div class="logos-poluentes mb-eq">
       <img src="./assets/img/pm10.png" width="30" alt="pm10" />
     </div>
     <article class="toggleDesactive">
@@ -150,7 +155,7 @@
     </div>
     <h3 class="text-lg toggleDesactive"><b>Monóxido de Carbono</b></h3>
   </div>
-  <div class="card aside__card rounded-md sofia-font mb-eq">
+  <div class="aside__card rounded-md sofia-font mb-eq">
     <article class="toggleDesactive">
       É um gás incolor e inodoro que resulta da queima incompleta de combustíveis de origem orgânica
       (combustíveis fósseis, biomassa etc.). Em geral é encontrado em maiores concentrações nas
@@ -189,7 +194,7 @@
     </div>
     <h3 class="text-lg toggleDesactive"><b>Ozônio</b></h3>
   </div>
-  <div class="card aside__card rounded-none sofia-font mb-eq">
+  <div class="aside__card rounded-none sofia-font mb-eq">
     <article class="toggleDesactive">
       Além de prejuízos à saúde, o ozônio pode causar danos à vegetação. É sempre bom ressaltar que
       o ozônio encontrado na faixa de ar próxima do solo, onde respiramos, chamado de “mau ozônio”,
@@ -223,41 +228,42 @@
   </div>
 
   <div class="d-flex">
-    <div class="logos-poluentes">
-      <img src="./assets/img/no2.png" width="30" class="mr-eq" alt="Dióxido de nitrogênio" />
+    <div class="icons-sponsor icon-main mr-eq">
+      <span>R</span>
     </div>
-    <h3 class="text-lg toggleDesactive"><b>Dióxido de nitrogênio</b></h3>
+    <h3 class="text-lg toggleDesactive"><b>Realização</b></h3>
   </div>
-  <div class="card aside__card rounded-none sofia-font my-2 mb-eq">
+  <div class="aside__card rounded-none sofia-font my-2 mb-eq">
     <article class="toggleDesactive">
-      É formado durante processos de combustão. Em grandes cidades, os veículos geralmente são os
-      principais responsáveis pela emissão dos óxidos de nitrogênio. O NO, sob a ação de luz solar
-      se transforma em NO2, que tem papel importante na formação de oxidantes fotoquímicos como o
-      ozônio. Dependendo das concentrações, o NO2 causa prejuízos à saúde.
-      <h4 class="sofia-font text-base font-black text-lg">Escala</h4>
-      <div class="d-flex my-2 aside__escala">
-        <div class="progress-bar progressBoa">
-          0
-          <br />
-          a
-          <br />
-          200
-        </div>
-        <div class="progress-bar progressModerada">
-          200
-          <br />
-          a
-          <br />
-          240
-        </div>
-        <div class="progress-bar progressRuim">
-          240 <br />
-          a <br />
-          320
-        </div>
-        <div class="progress-bar progressMruim">320 <br />a <br />1130</div>
-        <div class="progress-bar progressPessima">1130 <br />a <br />3750</div>
+      <div class="mb-eq d-flex justify-center">
+        <img src="./assets/img/logo-pmf_urbanismo.png" alt=" logo secretaria de urbanismo" width="155">
+     </div>
+     <div class="mb-eq d-flex justify-center">
+        <img src="./assets/img/logo_citinova.png" alt=" logo citinova " width="165">
+     </div>
+     <div class="mb-eq d-flex justify-center">
+        <img src="./assets/img/labi-for.png" alt=" logo citinova " width="135">
+     </div>
+    </article>  
+  </div>
+
+  <div class="d-flex">
+    <div class="icons-sponsor icon-parc mr-eq ">
+      <span>P</span>
+    </div>
+    <h3 class="text-lg toggleDesactive"><b>Parceria</b></h3>
+  </div>
+  <div class="aside__card rounded-none sofia-font my-2 mb-eq">
+    <article class="toggleDesactive">
+      <div class="mb-eq d-flex justify-center">
+        <img src="./assets/img/partners-logo.png" alt=" logo partners" width="145">
       </div>
-    </article>
+      <div class="mb-eq d-flex justify-center">
+          <img src="./assets/img/ufc-logo.png" alt="ufc logo" width="140">
+      </div>
+      <div class="mb-eq d-flex justify-center">
+        <img src="./assets/img/trama.png" alt="logo trama" width="125">
+      </div>
+    </article>  
   </div>
 </div>

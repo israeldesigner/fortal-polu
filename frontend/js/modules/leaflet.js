@@ -352,7 +352,7 @@ const leaflet = () => {
                   const createBlockText = () => {
                     if (_pm2ug > 1) {
                       blocoTexto = `
-                                              <div className="d-flex">                            
+                                              <div className="d-flex table__leaflet">                            
                                                   <div class="leaflet-title">                            
                                                       <h2 class="d-flex">
                                                           <img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
@@ -369,55 +369,57 @@ const leaflet = () => {
                                                               <strong class="orange-temp">${checkHumi} </strong>
                                                           </div>
                                                       </div>
-                                                      <table class="table-auto w-full">
-                                                          <tr class="text-xl">
+                                                      <table class="table_leaflet--table table-auto w-full">
+                                                          <thead class="text-xl">
                                                               <th>Poluentes</th>
                                                               <th>Valores*</th>
                                                               <th>Medida</th>
                                                               <th>Nível</th>
-                                                          </tr> 
-                                                              <tr style="background: ${
-                                                                colorForPm2.fillColor
-                                                              }">
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                                _pm2ug
-                                                              ).toFixed(2)}</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${nValue}</h4></td>
-                                                          </tr>   
-                                                          <tr>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                                _pm10ug
-                                                              ).toFixed(2)}</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
-                                                          </tr>    
-                                                          <tr>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                                _coppm
-                                                              ).toFixed(2)}</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
-                                                          </tr>    
-                                                          <tr>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                                _o3ug
-                                                              ).toFixed(2)}</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
-                                                          </tr>    
-                                                          <tr>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                                _no2ug
-                                                              ).toFixed(2)}</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
-                                                              <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
-                                                          </tr>    
+                                                          </thead> 
+                                                          <tbody>                                                          
+                                                            <tr style="background: ${
+                                                                  colorForPm2.fillColor
+                                                                }">
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
+                                                                  _pm2ug
+                                                                ).toFixed(2)}</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${nValue}</h4></td>
+                                                            </tr>   
+                                                            <tr>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
+                                                                  _pm10ug
+                                                                ).toFixed(2)}</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap">${pm10Text}</td>
+                                                            </tr>    
+                                                            <tr>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
+                                                                  _coppm
+                                                                ).toFixed(2)}</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
+                                                            </tr>    
+                                                            <tr>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
+                                                                  _o3ug
+                                                                ).toFixed(2)}</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap">${o3Text}</td>
+                                                            </tr>    
+                                                            <tr>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
+                                                                  _no2ug
+                                                                ).toFixed(2)}</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                                <td class="px-2 py-2 whitespace-nowrap">${no2Text}</td>
+                                                            </tr>    
+                                                          </tbody>
                                                       </table>
                                                       </div>
                                                       <em class="sofia-font text-xs">
@@ -470,10 +472,11 @@ const leaflet = () => {
   const logoPoluentes = document.querySelectorAll('.logos-poluentes')
   const btnActiveShow = document.querySelector('.btnShow')
   const cardsAside = document.querySelectorAll('.aside__card')
+  const btnIconMain = document.querySelector('.icon-main')
+  const btnIconParc = document.querySelector('.icon-parc')
+  const blockLogoMain = document.querySelector('.left-side__top');
+  const blockLogoParc = document.querySelector('.left-side__bottom')
 
-  // btnActiveShow.addEventListener('click', function(){
-  //     this.classList.toggle("active");
-  // })
 
   document.querySelectorAll('[data-component~="sidebar"]').forEach((button) => {
     button.addEventListener('click', function () {
@@ -496,6 +499,17 @@ const leaflet = () => {
       elementstarget.classList.toggle('active')
     })
   })
+
+  const toggleHidden = (btnToggle, blocktoogle) => {
+    if(btnToggle){
+      btnToggle.addEventListener('click', function(){
+        blocktoogle.classList.toggle('hidden')
+      })
+    }
+  }
+
+  toggleHidden(btnIconMain, blockLogoMain);
+  toggleHidden(btnIconParc, blockLogoParc);
 }
 
 export { leaflet }

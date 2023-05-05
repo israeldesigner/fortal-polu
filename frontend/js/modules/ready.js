@@ -1,6 +1,7 @@
 import { script } from './script'
 import { colormode } from './colormode'
 import { teste } from './convert'
+import { tooltip } from './tooltip'
 import { leaflet } from './leaflet'
 import { mobile } from './mobile'
 import { aside } from './aside'
@@ -25,6 +26,7 @@ ready(function () {
   // aside();
   script()
   //mobile
+  // tooltip();
 
   //   speech()
 

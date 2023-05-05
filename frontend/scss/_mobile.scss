@@ -1,0 +1,40 @@
+.left-side {
+	@include for-phone-only{
+		display: none;
+	}
+}
+
+.leaflet-title{
+	h2{
+		@include for-phone-only{
+			font-size: 1.0rem !important;
+		}
+	}
+}
+
+.leaflet-popup-content-wrapper{
+    @include for-phone-only{
+        width: 100% !important;
+    }
+}
+
+.table_leaflet--table{
+    thead{
+        @include for-phone-only{
+            font-size: 1.25rem !important;
+            font-family: 'Sofia Sans Condensed';
+        }
+    }
+    tbody{
+        tr{
+            td{
+                h4{
+                    @include for-phone-only{
+                        font-size: 1.10rem !important;
+                        font-family: 'Sofia Sans Condensed';
+                    }
+                }
+            }
+        }
+    }
+}
