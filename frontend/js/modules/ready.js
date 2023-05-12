@@ -1,11 +1,12 @@
 import { script } from './script'
-import { colormode } from './colormode'
-import { teste } from './convert'
-import { tooltip } from './tooltip'
+// import { colormode } from './colormode'
+// import { teste } from './convert'
+// import { tooltip } from './tooltip'
 import { leaflet } from './leaflet'
 import { mobile } from './mobile'
-import { aside } from './aside'
-import { speech } from './speech'
+import { initBootstrap } from './bootstrap'
+// import { aside } from './aside'
+// import { speech } from './speech'
 
 /**
  * Run event after DOM is ready
@@ -21,18 +22,14 @@ function ready(fn) {
 }
 
 ready(function () {
-  //script jquery
+
   leaflet()
-  // aside();
+  initBootstrap({
+    tooltip: true,
+    popover: true,
+    toasts: true,
+  });
   script()
-  //mobile
-  // tooltip();
-
-  //   speech()
-
-  // colormode();
-
-  // teste();
 
   let mw = window.matchMedia('(max-width: 768px)')
   mobile(mw)

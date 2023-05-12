@@ -3,8 +3,8 @@ const route = express.Router();
 const homeController = require('./src/controllers/home.controller.js');
 const loginController = require('./src/controllers/login.controller.js');
 const cadastroController = require('./src/controllers/cadastro.controller.js')
-const testeController = require('./src/controllers/teste.controller.js');
 const convertController = require('./src/controllers/convert.controller.js');
+const sobreController = require('./src/controllers/sobre.controller.js')
 
 
 //rotas da  home
@@ -21,11 +21,13 @@ route.post('/login/login', loginController.login);
 route.get('/cadastro', cadastroController.index);
 route.post('/cadastro/register', cadastroController.register);
 
-//rotas de teste
-route.get('/cadastro/teste', testeController.index);
-
 //convert
 route.get('/converter', convertController.index);
 route.post('/converter/upload', convertController.uploadfile);
+
+//rota static
+route.get('/sobre', sobreController.index);
+route.get('/analise-data', sobreController.analytics)
+// route.get('/politica-do-ar', sobreController.policy);
 
 module.exports = route;

@@ -1,0 +1,75 @@
+  
+  #footer{
+      border-top: 12px solid $orange;
+      padding: 40px 0px;
+      background: $yellow;
+      margin-top: 18px;
+  
+      .s-footer__blockLogo{
+          text-align: right;
+      }
+
+      .s-footer__logoProjeto{
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+  
+    .s-footer__sociais{
+        justify-content:flex-end;
+        align-items: center;
+        button{
+            margin-right: 5px;
+        }
+    }
+    .blockAdress{
+      display: flex;
+      align-items: flex-start;
+    }
+  
+    .linkPortal{
+      color:$yellow;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  
+    .linkPortal:hover{
+      color: $white;
+    }
+  
+    .logoBranca{
+      width: 300px;
+    }
+  
+  }
+  
+  .s-cookie{
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      font-size: .85rem;
+      padding: 10px;
+      border-top: 1px solid $gray-600;
+      p{
+          margin-bottom: 0px;
+      }
+  }
+  
+  
+  @media (max-width: 768px) {
+  
+    #footer{
+        .logoBranca{
+            width: 250px;
+        }
+        .blockAdress, .s-footer__blockLogoPmf, .s-footer__blockLogo{
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .s-footer__sociais{
+            justify-content: center;
+        }
+    }
+  
+  }
+  

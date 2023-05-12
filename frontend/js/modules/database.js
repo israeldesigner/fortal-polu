@@ -15,16 +15,16 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // configuração firebase
-const email = '*'
-const password = '*'
+const email = 'israeldesigner@icloud.com'
+const password = '6klzKIaA*hfKTa31'
 const firebaseConfig = {
-  apiKey: '*',
-  authDomain: '*',
-  projectId: '*',
-  storageBucket: '*',
-  messagingSenderId: '*',
-  appId: '*',
-  measurementId: '*',
+  apiKey: 'AIzaSyAl3Z8cGE62ZNFc__yLCktbvqyhXTVsGi8',
+  authDomain: 'moqatrama-prod.firebaseapp.com',
+  projectId: 'moqatrama-prod',
+  storageBucket: 'moqatrama-prod.appspot.com',
+  messagingSenderId: 1058408189763,
+  appId: '1:1058408189763:web:fdac184953248dde9d69f6',
+  measurementId: 'G-CWNNPY01JF',
 }
 
 // inicializa o Firebase

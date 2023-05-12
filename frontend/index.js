@@ -5,4 +5,6 @@ import '../node_modules/leaflet/dist/leaflet';
 import '../node_modules/@popperjs/core/dist/esm/popper';
 
 import '@/js/vendors/post-grid';
+
+// import '@/js/modules/database';
 import '@/js/modules/ready';

@@ -1,0 +1,86 @@
+.s-navMain{
+    top: 3vh;
+    z-index: 1000;
+    .navbar{
+        background: none;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        .s-navMain__logo{
+            display: flex;
+            align-items: center;
+            .s-navMain__logo--fortBil{
+                width: 100px;
+            }
+            .s-navMain__logo--fortPref{
+                width: 165px;
+            }
+        }
+
+        .s-navMain__collapse{
+            button{
+                border:none;
+            }
+        }
+        .navbar-nav{
+            .nav-link{
+                color: $black;
+                font-weight: 700;
+                &:hover{
+                    opacity: .75;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav{
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
+
+@media (min-width: 991px) {
+    .s-navMain{
+        .navbar{
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            display: flex;
+        }
+    }
+}
+@media (max-width: 991px) {
+
+    .s-navMain{
+        .navbar{
+            display: block !important;
+            .s-navMain__logo{
+                .s-navMain__logo--fortBil{
+                    width: 85px !important;
+                }
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+            }
+            .s-navMain__logo--fortPref{
+                width: 100px !important;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) and (min-width: 991px) {
+    .s-navMain__logo--fortBil{
+        width: 95px !important;
+    }
+    .s-navMain__logo--fortPref{
+        width: 115px !important;
+    }
+    .navbar-nav{
+        .nav-link{
+            font-size: smaller;
+        }
+    }
+    
+}
+
