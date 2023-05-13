@@ -1,118 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mapa de poluentes Fortaleza CE</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css" />
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet"> -->
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--acessibilidade-->
-    <section class="s-acessibility d-none d-lg-block top-0 my-2">
-        <div class="app-acessibilidade">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-12 app-acessibilidadeMenu d-none d-md-flex align-items-center">
-                        <a id="anchorMain"   class="mr-1" href="#content-wrapper" data-toggle="tooltip" data-placement="top" title="atalho alt + 1" data-original-title="alt + 1" accesskey="1"> Conteúdo Central |</a>
-                        <a id="anchorHeader" class="mr-1" href="#header-nav" data-toggle="tooltip" data-placement="top" title="atalho alt + 2" data-original-title="alt + 2" accesskey="2"> Menu |</a>
-                        <a id="anchorFooter" class="mr-1" href="#footer" data-toggle="tooltip" data-placement="top" title="atalho alt + 3" data-original-title="alt + 3" accesskey="3"> Rodapé </a>
-                        <a href="#" id="" class="altoContraste colorContrast mx-2" data-toggle="tooltip"
-                        data-placement="top" title="atalho alt + 0" accesskey="0">
-                            <span class="fa d-inline fa-adjust" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" id="" class="decrease-font sizeMenos mx-1" data-toggle="tooltip" data-placement="top">A-</a>
-                        <a href="#" id="" class="normal-font sizePadrao mx-1" data-toggle="tooltip" data-placement="top">A</a>
-                        <a href="#" id="" class="increase-font sizeMais mx-1" data-toggle="tooltip" data-placement="top">A+</a>
-                    </div>
-                    <div class="col-lg-6 col-12 app-acessibilidadeItens d-none d-md-block">
-                        <ul class="menu mb-0">
-                        <li class="nav-item">
-                            <a href="https://acessoainformacao.fortaleza.ce.gov.br/" data-toggle="tooltip" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Acesso a informação</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://transparencia.fortaleza.ce.gov.br/" data-toggle="tooltip" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Transparência</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://catalogodeservicos.fortaleza.ce.gov.br/" data-toggle="tooltip" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://legislacao.fortaleza.ce.gov.br/index.php/P%C3%A1gina_principal" data-toggle="tooltip" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Legislação</a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
+    <section class="s-acessibility d-none d-lg-block py-1">
+      <div class="app-acessibilidade">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-12 app-acessibilidadeMenu d-none d-md-flex align-items-center">
+              <!-- <a
+                id="anchorMain"
+                class="mr-1"
+                href="#content-wrapper"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="atalho alt + 1"
+                data-original-title="alt + 1"
+                accesskey="1"
+              >
+                Conteúdo Central |</a
+              >
+              <a
+                id="anchorHeader"
+                class="mr-1"
+                href="#header-nav"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="atalho alt + 2"
+                data-original-title="alt + 2"
+                accesskey="2"
+              >
+                Menu |</a
+              >
+              <a
+                id="anchorFooter"
+                class="mr-1"
+                href="#footer"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="atalho alt + 3"
+                data-original-title="alt + 3"
+                accesskey="3"
+              >
+                Rodapé
+              </a> -->
+              <a
+                href="#"
+                id=""
+                class="altoContraste colorContrast mx-2"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="atalho alt + 0"
+                accesskey="0"
+              >
+                <span class="fa d-inline fa-adjust" aria-hidden="true"></span>
+              </a>
+              <a
+                href="#"
+                id=""
+                class="decrease-font sizeMenos mx-1"
+                data-toggle="tooltip"
+                data-placement="top"
+                >A-</a
+              >
+              <a
+                href="#"
+                id=""
+                class="normal-font sizePadrao mx-1"
+                data-toggle="tooltip"
+                data-placement="top"
+                >A</a
+              >
+              <a
+                href="#"
+                id=""
+                class="increase-font sizeMais mx-1"
+                data-toggle="tooltip"
+                data-placement="top"
+                >A+</a
+              >
             </div>
+            <div class="col-lg-6 col-12 app-acessibilidadeItens d-none d-md-block">
+              <ul class="menu mb-0">
+                <li class="nav-item">
+                  <a
+                    href="https://acessoainformacao.fortaleza.ce.gov.br/"
+                    data-toggle="tooltip"
+                    class="nav-link px-1 text-gray-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Acesso a informação</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://transparencia.fortaleza.ce.gov.br/"
+                    data-toggle="tooltip"
+                    class="nav-link px-1 text-gray-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Transparência</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://catalogodeservicos.fortaleza.ce.gov.br/"
+                    data-toggle="tooltip"
+                    class="nav-link px-1 text-gray-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Serviços</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="http://legislacao.fortaleza.ce.gov.br/index.php/P%C3%A1gina_principal"
+                    data-toggle="tooltip"
+                    class="nav-link px-1 text-gray-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Legislação</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <!--/acessibilidade-->
     <!--navbar-->
-    <section class="s-navMain container-lg position-sticky z-index-sticky">
-        <nav id="header-nav" class="navbar navbar-expand-lg border-radius-xl top-0 position-absolute py-2 start-0 end-0 mx-4 mt-2">
-            <div class="s-navMain__logo">
-                <a href="/" class="navbar-brand font-weight-bolder ms-sm-3" href="" rel="tooltip" 
-                title="Logo Fortaleza qualidade do ar" data-placement="bottom" target="_blank">
-                    <img
-                    src="./assets/img/logo-arqual.png"
-                    width="135"
-                    alt="Logo Prefeitura de Fortaleza"
-                    style="margin-bottom: 20px"
-                />
-                </a>
-                <a href="/" class="">
-                    <img
-                    src="./assets/img/logoPref.png"
-                    width="200"
-                    alt="Logo Prefeitura de Fortaleza"
-                    style="margin-bottom: 20px"
-                  />
-                </a>
-                <button class="navbar-toggler shadow-none ms-2 border-0" type="button" 
-                    data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon mt-2">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                    </span>
-                </button>
+    <section class="s-navMain bg-warning shadow">
+      <div class="container-xl">
+        <nav id="header-nav" class="navbar navbar-expand-lg">
+          <div class="s-navMain__logo">
+            <a
+              href="/"
+              class="navbar-brand font-weight-bolder ms-sm-3"
+              href=""
+              rel="tooltip"
+              title="Logo Fortaleza qualidade do ar"
+              data-placement="bottom"
+              target="_blank"
+            >
+              <img
+                src="./assets/img/logo-arqual.png"
+                width="100"
+                alt="Logo Prefeitura de Fortaleza"
+              />
+            </a>
+            <a href="/" class="">
+              <img src="./assets/img/logoPref.png" width="145" alt="Logo Prefeitura de Fortaleza" />
+            </a>
+            <button
+              class="navbar-toggler shadow-none ms-2 border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navigation"
+              aria-controls="navigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+          </div>
+          <div class="s-navMain__collapse">
+            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                  <a
+                    href="/"
+                    class="nav-link nav-home ps-2 d-flex cursor-pointer align-items-center"
+                  >
+                    Início
+                  </a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a
+                    href="/sobre"
+                    class="nav-link nav-preinscricao ps-2 d-flex cursor-pointer align-items-center"
+                  >
+                    Sobre
+                  </a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a
+                    href="/analise-data"
+                    class="scroll nav-about nav-link ps-2 d-flex cursor-pointer align-items-center"
+                  >
+                    Análise de Dados
+                  </a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a
+                    href="/"
+                    class="nav-link nav-cursos ps-2 d-flex cursor-pointer align-items-center"
+                  >
+                    Política qualidade do ar
+                  </a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a
+                    href="/"
+                    class="nav-link nav-fale-conosco ps-2 d-flex cursor-pointer align-items-center"
+                  >
+                    Fale conosco
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div class="s-navMain__collapse">
-                <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a href="/" class="nav-link nav-home ps-2 d-flex cursor-pointer align-items-center" >
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="/pre-inscricao" class="nav-link nav-preinscricao ps-2 d-flex cursor-pointer align-items-center">
-                                Sobre
-                            </a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="#" class="scroll nav-about nav-link ps-2 d-flex cursor-pointer align-items-center">
-                            Análise de Dados
-                            </a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="/cursos_bilingue" class="nav-link nav-cursos ps-2 d-flex cursor-pointer align-items-center">
-                                Política qualidade do ar
-                            </a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="/fale-conosco" class="nav-link nav-fale-conosco ps-2 d-flex cursor-pointer align-items-center">
-                                Fale conosco
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </nav>
+      </div>
     </section>
     <!--/navbar-->
+  </body>
+</html>

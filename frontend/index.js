@@ -1,10 +1,7 @@
-import '@/scss/index.scss';
-import '@/css/style.css';
+import '@/scss/index.scss'
+import '@/css/style.css'
 
-import '../node_modules/leaflet/dist/leaflet';
-import '../node_modules/@popperjs/core/dist/esm/popper';
-
-import '@/js/vendors/post-grid';
+import '../node_modules/leaflet/dist/leaflet'
 
 // import '@/js/modules/database';
-import '@/js/modules/ready';
+import '@/js/modules/ready'

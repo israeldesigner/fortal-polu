@@ -378,8 +378,8 @@ const leaflet = () => {
                                                           </thead> 
                                                           <tbody>                                                          
                                                             <tr style="background: ${
-                                                                  colorForPm2.fillColor
-                                                                }">
+                                                              colorForPm2.fillColor
+                                                            }">
                                                                 <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
                                                                 <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
                                                                   _pm2ug
@@ -474,42 +474,41 @@ const leaflet = () => {
   const cardsAside = document.querySelectorAll('.aside__card')
   const btnIconMain = document.querySelector('.icon-main')
   const btnIconParc = document.querySelector('.icon-parc')
-  const blockLogoMain = document.querySelector('.left-side__top');
+  const blockLogoMain = document.querySelector('.left-side__top')
   const blockLogoParc = document.querySelector('.left-side__bottom')
 
+  // document.querySelectorAll('[data-component~="sidebar"]').forEach((button) => {
+  //   button.addEventListener('click', function () {
+  //     toggleActive.forEach((e, i) => {
+  //       e.classList.toggle('hidden')
+  //     })
+  //     toggleDesactive.forEach((e, i) => {
+  //       e.classList.toggle('block')
+  //     })
 
-  document.querySelectorAll('[data-component~="sidebar"]').forEach((button) => {
-    button.addEventListener('click', function () {
-      toggleActive.forEach((e, i) => {
-        e.classList.toggle('hidden')
-      })
-      toggleDesactive.forEach((e, i) => {
-        e.classList.toggle('block')
-      })
+  //     logoPoluentes.forEach((e, i) => {
+  //       e.classList.toggle('mb-eq')
+  //     })
 
-      logoPoluentes.forEach((e, i) => {
-        e.classList.toggle('mb-eq')
-      })
+  //     cardsAside.forEach((e, i) => {
+  //       e.classList.toggle('card')
+  //     })
 
-      cardsAside.forEach((e, i) => {
-        e.classList.toggle('card')
-      })
+  //     const elementstarget = document.getElementById(this.dataset.target)
+  //     elementstarget.classList.toggle('active')
+  //   })
+  // })
 
-      const elementstarget = document.getElementById(this.dataset.target)
-      elementstarget.classList.toggle('active')
-    })
-  })
+  // const toggleHidden = (btnToggle, blocktoogle) => {
+  //   if(btnToggle){
+  //     btnToggle.addEventListener('click', function(){
+  //       blocktoogle.classList.toggle('hidden')
+  //     })
+  //   }
+  // }
 
-  const toggleHidden = (btnToggle, blocktoogle) => {
-    if(btnToggle){
-      btnToggle.addEventListener('click', function(){
-        blocktoogle.classList.toggle('hidden')
-      })
-    }
-  }
-
-  toggleHidden(btnIconMain, blockLogoMain);
-  toggleHidden(btnIconParc, blockLogoParc);
+  // toggleHidden(btnIconMain, blockLogoMain);
+  // toggleHidden(btnIconParc, blockLogoParc);
 }
 
 export { leaflet }

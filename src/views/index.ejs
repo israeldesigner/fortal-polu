@@ -1,15 +1,17 @@
 <%- include('includes/header') %>
 <main class="">
-  <section class="hero">
+  <section class="hero mb-5">
     <div class="overflow-hidden">
-      <div class="container-fluid col-xxl-8">
+      <div class="container-fluid col-xxl-10">
         <div class="row flex-lg-nowrap align-items-center g-5">
-          <div class="order-lg-1 w-100">
-            <img style="clip-path: polygon(25% 0%, 100% 0%, 100% 99%, 0% 100%);" 
-                src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768" 
-                class="d-block mx-lg-auto img-fluid" alt="Photo by Milad Fakurian" loading="lazy" 
+          <div class="order-lg-1 w-100 mt-0 mb-0" >
+            <img style="" 
+                src="./assets/img/bg1.png" 
+                class="d-block img-fluid" 
+                alt="Photo by Milad Fakurian" 
+                loading="lazy" 
                 srcset="
-                https://images.unsplash.com/photo-1618004912476-29818d81ae2e?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768 1080w, 
+                ./assets/img/bg1.png 1080w, 
                 https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=150 150w, 
                 https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=300 300w, 
                 https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=768 768w, 
@@ -18,16 +20,19 @@
                 width="2160" 
                 height="768">
           </div>
-          <div class="col-lg-6 col-xl-5 text-center text-lg-start pt-lg-5 mt-xl-4">
+          <div class="col-lg-6 col-xl-5 text-center text-lg-start pt-lg-5 mt-lg-5">
             <div class="lc-block mb-4">
               <div editable="rich">
-                <h1 class="fw-bold display-4">Qualidade do ar de Fortaleza</h1>
+                <h4 class="fw-bold display-5 text-success">Qualidade do ar de Fortaleza</h4>
               </div>
             </div>
     
             <div class="lc-block mb-3">
               <div editable="rich">
-                <p class="rfs-8"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim.</p>
+                <p class="rfs-8"> 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Nunc et metus id ligula malesuada placerat sit amet quis enim.
+                </p>
               </div>
             </div>
     
@@ -51,7 +56,7 @@
               </div>
             </div>
 
-            <div class="lc-block mt-3">
+            <!-- <div class="lc-block mt-3">
               <div editable="rich">
                 <p class="fw-bold"> Parceria:</p>
               </div>
@@ -66,17 +71,26 @@
               <div class="lc-block col-4">
                 <img src="./assets/img/trama.png" alt="logo trama" width="125">
               </div>
-            </div>
+            </div> -->
           </div>
     
         </div><!-- /lc-block -->
       </div>
     </div>
   </section>
-  <section id="section-map">
-    <div id="map">
-    </div>
-    <%- include('includes/aside') %>
+  <section id="section-map " class="pt-5 pb-5 mt-3 mb-3">
+     <h2 class="text-success text-center mb-5"> Dashboard Qualidade do Ar</h2>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-12">
+          <div id="map" class="border-radius-xl">
+          </div>
+        </div>
+        <div class="col-lg-2 col-12">
+          <%- include('includes/aside') %>
+        </div>
+      </div>
+     </div>
   </section>
 </main>
 </body>

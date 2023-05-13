@@ -1,262 +1,273 @@
-.s-scessibilityBlock{
-    left: 98.7%;
-    flex-direction: column;
-    display: none;
-    div{
-      margin-bottom: 10px;
-      @include border-radius(100%);
+.s-scessibilityBlock {
+  left: 98.7%;
+  flex-direction: column;
+  display: none;
+  div {
+    margin-bottom: 10px;
+    @include border-radius(100%);
+    color: $black;
+    padding: 6px;
+    background: $white;
+    text-align: center;
+    a {
+      font-size: 0.775rem;
+      font-weight: bold;
       color: $black;
-      padding: 6px;
-      background: $white;
       text-align: center;
-      a{
-        font-size: .775rem;
-        font-weight: bold;
-        color: $black;
-        text-align: center;
-      }
     }
   }
-  
-  
-  
-  .hide{display:none;}
-  
-  .contrast h1,
-  .contrast h2,
-  .contrast h3,
-  .contrast h4,
-  .contrast h5,
-  .contrast h6,
-  .contrast p,
-  .contrast label,
-  .contrast strong,
-  .contrast em,
-  .contrast cite,
-  .contrast q,
-  .contrast i,
-  .contrast b,
-  .contrast u,
-  .contrast span {
-    color: white !important; }
-  
-  .contrast a {
-    color: yellow !important; }
-    .contrast a:hover {
-      color: white !important; }
-  
-  .contrast a.btn {
-    color: yellow !important;
-    background: black !important;
-    border: none !important; }
-    .contrast a.btn:hover {
-      color: white !important; }
-  
-  .contrast button,
-  .contrast input[type=button],
-  .contrast input[type=reset],
-  .contrast input[type=submit] {
-    background: black !important;
-    color: yellow !important;
-    border: none !important; }
-  
-  .contrast input[type=text],
-  .contrast input[type=password],
-  .contrast input[type=url],
-  .contrast input[type=search],
-  .contrast input[type=email],
-  .contrast input[type=tel],
-  .contrast input[type=date],
-  .contrast input[type=month],
-  .contrast input[type=week],
-  .contrast input[type=datetime],
-  .contrast input[type=datetime-local],
-  .contrast textarea,
-  .contrast input[type=number] {
-    background: black !important;
-    border: 1px solid white !important;
-    color: white !important; }
-  
-  .contrast{
-    section.s-content,body,#footer, header, .mask, main{
-      background:$black !important;
+}
+
+.hide {
+  display: none;
+}
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast span {
+  color: white !important;
+}
+
+.contrast a {
+  color: yellow !important;
+}
+.contrast a:hover {
+  color: white !important;
+}
+
+.contrast a.btn {
+  color: yellow !important;
+  background: black !important;
+  border: none !important;
+}
+.contrast a.btn:hover {
+  color: white !important;
+}
+
+.contrast button,
+.contrast input[type='button'],
+.contrast input[type='reset'],
+.contrast input[type='submit'] {
+  background: black !important;
+  color: yellow !important;
+  border: none !important;
+}
+
+.contrast input[type='text'],
+.contrast input[type='password'],
+.contrast input[type='url'],
+.contrast input[type='search'],
+.contrast input[type='email'],
+.contrast input[type='tel'],
+.contrast input[type='date'],
+.contrast input[type='month'],
+.contrast input[type='week'],
+.contrast input[type='datetime'],
+.contrast input[type='datetime-local'],
+.contrast textarea,
+.contrast input[type='number'] {
+  background: black !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+.contrast {
+  section.s-content,
+  body,
+  #footer,
+  header,
+  .mask,
+  main {
+    background: $black !important;
+  }
+  .mask {
+    opacity: 0.75 !important;
+  }
+  .page-header {
+    -webkit-filter: grayscale(100%) contrast(120%) !important;
+    filter: grayscale(100%) contrast(120%) !important;
+  }
+  section.s-initAbout,
+  section.s-content {
+    .card {
+      background: $black !important;
+      border: 1px solid $white !important;
     }
-    .mask{
-      opacity: .75 !important;
-    }
-    .page-header{
+  }
+
+  section.s-initEixos {
+    background: $black !important;
+    .s-initEixos__sun {
       -webkit-filter: grayscale(100%) contrast(120%) !important;
       filter: grayscale(100%) contrast(120%) !important;
     }
-    section.s-initAbout, section.s-content{
-      .card{
-        background: $black !important;
-        border: 1px solid $white !important;
-      }
-    }
-  
-    section.s-initEixos{
-      background: $black !important;
-      .s-initEixos__sun{
-        -webkit-filter: grayscale(100%) contrast(120%) !important;
-        filter: grayscale(100%) contrast(120%) !important;
-      }
-      .s-initEixos{
-        color: $white !important;
-      }
-    }
-  
-    section.s-courses{
-      color: $white;
-    }
-    #footer{
-      border:$black !important;
-      color: $white !important ;
+    .s-initEixos {
+      color: $white !important;
     }
   }
-  
-  .contrast img.on-contrast-force-gray {
+
+  section.s-courses {
+    color: $white;
+  }
+  #footer {
+    border: $black !important;
+    color: $white !important ;
+  }
+}
+
+.contrast img.on-contrast-force-gray {
+  -webkit-filter: grayscale(100%) contrast(120%);
+  filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+
+.contrast {
+  img {
     -webkit-filter: grayscale(100%) contrast(120%);
-            filter: grayscale(100%) contrast(120%); }
-  
-  .contrast img.on-contrast-force-white {
-    -webkit-filter: brightness(0) invert(1);
-            filter: brightness(0) invert(1); }
-  
-  .contrast {
-      img{
-          -webkit-filter: grayscale(100%) contrast(120%);
-          filter: grayscale(100%) contrast(120%);
-      }
+    filter: grayscale(100%) contrast(120%);
   }
-  
-  .contrast{
-    img.on-contrast-invert{
-      -webkit-filter: brightness(1) invert(1) !important;
-      filter: brightness(1) invert(1) !important;
+}
+
+.contrast {
+  img.on-contrast-invert {
+    -webkit-filter: brightness(1) invert(1) !important;
+    filter: brightness(1) invert(1) !important;
+  }
+}
+
+.contrast {
+  section.s-navMain {
+    .navbar {
+      background: $black !important;
+      border: 1px solid $white !important;
     }
   }
-  
-  .contrast {
-    section.s-navMain{
-      .navbar{
-        background: $black !important;
-        border:1px solid $white !important;
-      }
-    }
-  }
-  
-  .contrast a i {
-    color: yellow !important; }
-  
-  .contrast .inputGroup-header .form-control {
-    color: #fff !important;
-    border: 1px solid #fff !important; }
-  
-  .contrast .form-control {
-    color: #fff !important;
-    border: 1px solid #fff !important; }
-    
-    .contrast small{
+}
+
+.contrast a i {
+  color: yellow !important;
+}
+
+.contrast .inputGroup-header .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.contrast .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.contrast small {
+  background: black;
+  color: white;
+}
+
+.contrast i {
+  background: black !important;
+  color: white !important;
+}
+
+.contrast {
+  .s-scessibilityBlock {
+    div {
       background: black;
-      color: white;
-    }
-    
-    .contrast i {
-      background: black !important;
-      color: white !important;
-    }
-    
-    .contrast{
-      .s-scessibilityBlock{
-        div{
-          background: black;
-          border: 1px solid yellow;
-          a, span{
-            color: yellow !important;
-          }
-          &:hover{
-            opacity: .7;
-          }
-  
-        }
+      border: 1px solid yellow;
+      a,
+      span {
+        color: yellow !important;
+      }
+      &:hover {
+        opacity: 0.7;
       }
     }
-  
-  .s-acessibility{
-      position: absolute;
-      background: none;
-      width: 100%;
-      margin-right: auto;
+  }
+}
+
+.s-acessibility {
+  background: none;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 500;
+  display: flex;
+  flex: 1;
+  font-size: 0.775rem;
+  background: $orange;
+  a {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    padding-left: 0px;
+    display: flex;
+    list-style: none;
+    margin-bottom: 0px;
+    justify-content: flex-end;
+    li {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0px !important;
+      }
+    }
+  }
+
+  &__utils {
+    display: flex;
+    width: 50%;
+    margin-left: 25px;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    &--anchors {
+      border-right: 1px solid #000000;
+      margin-right: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    width: 50%;
+    margin-right: 25px;
+    &--external {
       margin-left: auto;
-      font-weight: 500;
-      display: flex;
-      flex: 1;
-      font-size: 0.775rem;
-      z-index: 1024;
-      a{
-          color: $black;
-          text-decoration: none;
-          &:hover{
-              text-decoration: underline;
-          }
-      }
-      ul{
-          padding-left: 0px;
-          display: flex;
-          list-style: none;
-          margin-bottom: 0px;
-          justify-content: flex-end;
-          li{
-              margin-right: 10px;
-              &:last-child{
-                  margin-right: 0px !important;
-              }
-          }
-      }
-  
-      &__utils{
-        display: flex;
-        width: 50%;
-        margin-left: 25px;
-        -webkit-box-align: center !important;
-        -ms-flex-align: center !important;
-        align-items: center !important;
-        &--anchors{
-          border-right: 1px solid #000000;
-          margin-right: 10px;
-          padding-right: 10px;
-        }
-      }
-  
-      &__links {
-          display: flex;
-          width: 50%;
-          margin-right: 25px;
-          &--external{
-              margin-left: auto;
-          }
-      }
-      
-  }
-  
-  @media (max-width: 825px) {
-  
-    .s-acessibility{
-        display: block;
-        text-align: center;
-      &__utils{
-          align-items: center;
-          margin-left: 0px;
-          justify-content: center;
-          width: 100%;
-      }
-      &__links {
-          display: none;
-      }
     }
-  
   }
-  
-  
-  
+}
+
+@media (max-width: 825px) {
+  .s-acessibility {
+    display: block;
+    text-align: center;
+    &__utils {
+      align-items: center;
+      margin-left: 0px;
+      justify-content: center;
+      width: 100%;
+    }
+    &__links {
+      display: none;
+    }
+  }
+}
