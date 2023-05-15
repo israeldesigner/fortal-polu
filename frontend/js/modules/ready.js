@@ -1,11 +1,13 @@
-import { script } from "./script";
+import { script } from './script'
 // import { colormode } from './colormode'
 // import { teste } from './convert'
 // import { tooltip } from './tooltip'
-import { leaflet } from "./leaflet";
-import { mobile } from "./mobile";
-import { initBootstrap } from "./bootstrap";
-import { scrollFunc } from "./scroll";
+import { leaflet } from './leaflet'
+import { mobile } from './mobile'
+import { initBootstrap } from './bootstrap'
+import { scrollFunc } from './scroll'
+import { acessibility } from './contrast'
+import { fontSize } from './fontSize'
 // import { aside } from './aside'
 // import { speech } from './speech'
 
@@ -15,28 +17,26 @@ import { scrollFunc } from "./scroll";
  */
 function ready(fn) {
   // Sanity check
-  if (typeof fn !== "function") return;
+  if (typeof fn !== 'function') return
   // If document is already loaded, run method
-  if (
-    document.readyState === "interactive" ||
-    document.readyState === "complete"
-  )
-    return fn();
+  if (document.readyState === 'interactive' || document.readyState === 'complete') return fn()
   // Otherwise, wait until document is loaded
-  document.addEventListener("DOMContentLoaded", fn, false);
+  document.addEventListener('DOMContentLoaded', fn, false)
 }
 
 ready(function () {
-  leaflet();
+  leaflet()
   initBootstrap({
     tooltip: true,
     popover: true,
     toasts: true,
-  });
-  script();
-  scrollFunc();
+  })
+  script()
+  scrollFunc()
+  acessibility()
+  fontSize()
 
-  let mw = window.matchMedia("(max-width: 768px)");
-  mobile(mw);
-  mw.addListener(mobile);
-});
+  let mw = window.matchMedia('(max-width: 768px)')
+  mobile(mw)
+  mw.addListener(mobile)
+})

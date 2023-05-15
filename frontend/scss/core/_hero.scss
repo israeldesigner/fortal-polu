@@ -1,0 +1,13 @@
+@media (min-width: 991px) {
+  .s-hero {
+    .s-hero__block {
+      height: 75vh;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .s-hero__block--img {
+    height: 540px;
+    border: 1px solid red;
+  }
+}
