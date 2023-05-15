@@ -1,8 +1,13 @@
 exports.index = (req, res) => {
-    res.render('teste');
-    return
-}
+  res.render("about");
+  return;
+};
+
+exports.policy = (req, res) => {
+  res.render("politica");
+  return;
+};
 
 exports.analytics = (req, res) => {
-    res.render('analytics')
-}
+  res.render("analytics");
+};

@@ -9,8 +9,6 @@
     "dev": "cross-env NODE_ENV=development webpack -w --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack -w --config config/webpack.prod.js",
     "production": "pm2 start server.js --name nodepm --watch -i 1",
-    "lint": "eslint 'src/**/*.js' || true",
-    "prettify": "prettier --write 'src/**/*.js'",
     "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "keywords": [],
@@ -31,6 +29,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "firebase": "^9.22.0",
     "helmet": "^6.0.1",
     "jest": "^27.5.1",
     "mongoose": "^7.0.1",

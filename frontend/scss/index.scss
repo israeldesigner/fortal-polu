@@ -1,16 +1,12 @@
-@import '../../node_modules/gerillass/scss/gerillass';
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import 'mixins';
-@import 'variables';
-@import 'tooltip';
-@import 'scaffolding';
-@import 'leaflet';
-@import 'mobile';
-@import 'core/acessibilidade';
-@import 'core/nav';
-@import 'core/footer';
-
-
-
-
-
+@import "../../node_modules/gerillass/scss/gerillass";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "mixins";
+@import "variables";
+@import "tooltip";
+@import "scaffolding";
+@import "leaflet";
+@import "mobile";
+@import "core/nav";
+@import "core/footer";
+@import "core/about";
+@import "core/acessibilidade";

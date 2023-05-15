@@ -1,0 +1,9 @@
+.s-about {
+  background: rgba($color: #fcffcb, $alpha: 0.75);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .s-about__card {
+    background: $white;
+    padding: 25px;
+  }
+}

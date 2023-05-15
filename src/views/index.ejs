@@ -8,7 +8,7 @@
             <img style="" 
                 src="./assets/img/bg1.png" 
                 class="d-block img-fluid" 
-                alt="Photo by Milad Fakurian" 
+                alt="imagem banner" 
                 loading="lazy" 
                 srcset="
                 ./assets/img/bg1.png 1080w, 
@@ -36,7 +36,8 @@
               </div>
             </div>
     
-            <div class="lc-block mb-5"><a class="btn btn-warning px-4 me-md-2 btn-lg" href="#" role="button">Acompanhar</a>
+            <div class="lc-block mb-5">
+              <a id="btn-map" class="btn btn-warning px-4 me-md-2 btn-lg">Veja o mapa</a>
             </div>
     
             <div class="lc-block">
@@ -78,16 +79,195 @@
       </div>
     </div>
   </section>
-  <section id="section-map " class="pt-5 pb-5 mt-3 mb-3">
-     <h2 class="text-success text-center mb-5"> Dashboard Qualidade do Ar</h2>
+  <section id="section-map" class="s-map pt-5 pb-5 mt-3 mb-3">
+     <h2 class="text-success text-center mb-5"> Mapa Qualidade do Ar</h2>
      <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-10 col-12">
+        <div class="col-lg-10 col-md-12">
           <div id="map" class="border-radius-xl">
           </div>
+          <div class="row mt-4 s-map__row">
+            <div class="col-6 col-md-3">
+              <div class="card aside__card rounded-none sofia-font mb-eq">
+                <div class="logos-poluentes ">
+                  <img src="./assets/img/pm25.png" width="30" alt="pm2.5" />
+                  <strong class="text-lg toggleActive">Micro partículas PM2.5</strong>
+                </div>
+                <article class="toggleActive">
+                  Podem ser definidas de maneira simplificada como aquelas cujo diâmetro
+                  aerodinâmico é menor ou igual a 2,5 µm. or causa do seu tamanho diminuto,
+                  penetram profundamente no sistema respiratório, podendo atingir os
+                  alvéolos pulmonares.
+                  <h6 class="sofia-font text-base font-black text-lg">Escala</h6>
+                  <div class="d-flex my-2 aside__escala">
+                    <div class="progress-bar progressBoa">
+                      0
+                      <br />
+                      a
+                      <br />
+                      25
+                    </div>
+                    <div class="progress-bar progressModerada">
+                      25
+                      <br />
+                      a
+                      <br />
+                      50
+                    </div>
+                    <div class="progress-bar progressRuim">
+                      50 <br />
+                      a <br />
+                      75
+                    </div>
+                    <div class="progress-bar progressMruim">75 <br />a <br />125</div>
+                    <div class="progress-bar progressPessima">125 <br />a <br />300</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card aside__card rounded-none sofia-font mb-eq">
+                <div class="logos-poluentes">
+                  <img src="./assets/img/pm10.png" width="30" alt="pm10" />
+                  <strong class="text-lg toggleActive">Micro partículas PM10</strong>
+                </div>
+                <article class="toggleActive">
+                  Podem ser definidas de maneira simplificada como aquelas cujo diâmetro
+                  aerodinâmico é menor ou igual a 10 µm. Dependendo da distribuição de
+                  tamanho na faixa de 0 a 10 µm, podem ficar retidas na parte superior do
+                  sistema respiratório ou penetrar mais profundamente, alcançando os
+                  alvéolos pulmonares.
+                  <h6 class="sofia-font text-base font-black text-lg">Escala</h6>
+                  <div class="d-flex my-2 aside__escala">
+                    <div class="progress-bar progressBoa">
+                      0
+                      <br />
+                      a
+                      <br />
+                      50
+                    </div>
+                    <div class="progress-bar progressModerada">
+                      50
+                      <br />
+                      a
+                      <br />
+                      100
+                    </div>
+                    <div class="progress-bar progressRuim">
+                      100 <br />
+                      a <br />
+                      150
+                    </div>
+                    <div class="progress-bar progressMruim">150 <br />a <br />250</div>
+                    <div class="progress-bar progressPessima">250 <br />a <br />600</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card aside__card rounded-none sofia-font mb-eq">
+                <div class="logos-poluentes">
+                  <img src="./assets/img/o3.png" width="30" alt="Ozônio" />
+                  <strong class="text-lg toggleActive">Ozônio</strong>
+                </div>
+                <article class="toggleActive">
+                  Além de prejuízos à saúde, o ozônio pode causar danos à vegetação. É
+                  sempre bom ressaltar que o ozônio encontrado na faixa de ar próxima do
+                  solo, onde respiramos, chamado de “mau ozônio”, é tóxico. Entretanto, na
+                  estratosfera (cerca de 25 km de altitude) o ozônio tem a importante função
+                  de proteger a Terra, como um filtro, dos raios ultravioletas emitidos pelo
+                  Sol.
+                  <h6 class="sofia-font text-base font-black text-lg">Escala</h6>
+                  <div class="d-flex my-2 aside__escala">
+                    <div class="progress-bar progressBoa">
+                      0
+                      <br />
+                      a
+                      <br />
+                      100
+                    </div>
+                    <div class="progress-bar progressModerada">
+                      100
+                      <br />
+                      a
+                      <br />
+                      130
+                    </div>
+                    <div class="progress-bar progressRuim">
+                      130 <br />
+                      a <br />
+                      160
+                    </div>
+                    <div class="progress-bar progressMruim">160 <br />a <br />200</div>
+                    <div class="progress-bar progressPessima">200 <br />a <br />800</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card aside__card rounded-none sofia-font">
+                <div class="logos-poluentes">
+                  <img
+                    src="./assets/img/no2.png"
+                    width="30"
+                    alt="Dióxido de nitrogênio"
+                  />
+                  <strong class="text-lg toggleActive">Dióxido de nitrogênio</strong>
+                </div>
+                <article class="toggleActive">
+                  É formado durante processos de combustão. Em grandes cidades, os veículos
+                  geralmente são os principais responsáveis pela emissão dos óxidos de
+                  nitrogênio. O NO, sob a ação de luz solar se transforma em NO2, que tem
+                  papel importante na formação de oxidantes fotoquímicos como o ozônio.
+                  Dependendo das concentrações, o NO2 causa prejuízos à saúde.
+                  <h6 class="sofia-font text-base font-black text-lg">Escala</h6>
+                  <div class="d-flex my-2 aside__escala">
+                    <div class="progress-bar progressBoa">
+                      0
+                      <br />
+                      a
+                      <br />
+                      200
+                    </div>
+                    <div class="progress-bar progressModerada">
+                      200
+                      <br />
+                      a
+                      <br />
+                      240
+                    </div>
+                    <div class="progress-bar progressRuim">
+                      240 <br />
+                      a <br />
+                      320
+                    </div>
+                    <div class="progress-bar progressMruim">320 <br />a <br />1130</div>
+                    <div class="progress-bar progressPessima">1130 <br />a <br />3750</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-2 col-12">
+        <div class="col-lg-2 col-md-12">
           <%- include('includes/aside') %>
+        </div>
+      </div>
+     </div>
+  </section>
+
+  <section id="parceiros" class="s-parceiros pt-5 pb-5 mt-3 mb-5">
+     <h2 class="text-success text-center mb-5"> Parceiros</h2>
+     <div class="container">
+      <div class="d-flex flex-md-row flex-column justify-content-center">
+        <div class="text-center px-3 py-2">
+          <img src="./assets/img/partners-logo.png" alt=" logo partners" width="175">
+        </div>
+        <div class="text-center px-3 py-2">
+          <img src="./assets/img/ufc-logo.png" alt="ufc logo" width="165">
+        </div>
+        <div class="text-center px-3 py-2">
+          <img src="./assets/img/trama.png" alt="logo trama" width="155">
         </div>
       </div>
      </div>
