@@ -1,0 +1,79 @@
+<%- include('includes/header') %>
+<header class="">
+  <div class="page-header min-vh-50 page-normal">
+    <span class="mask bg-gradient-warning opacity-2"></span>
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center mx-auto my-auto">
+          <h1 class="text-success my-4">Fale conosco</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="s-about" class="s-about s-contact my-4">
+    <div
+      class="registration-form d-flex flex-md-row flex-column justify-content-between align-itens-center"
+    >
+      <div class="s-contact__form">
+        <p class="fw-bold text-center lead mt-5 pt-3">Envie sua mensagem</p>
+        <form action="" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control item" id="nome" placeholder="Nome completo" />
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control item" id="email" placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <textarea
+              name=""
+              class="form-control item"
+              placeholder="mensagem"
+              id=""
+              cols="30"
+              rows="6"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-block create-account btn-success">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="s-contact__address d-flex flex-column justify-content-center">
+        <img
+          src="./assets/img/logo-citinovaBlack.png"
+          class="mb-3 on-contrast-invert"
+          alt="Logo Citinova"
+          width="165"
+        />
+        <br />
+        <address class="text-black">
+          <strong class="font-weight-bold"
+            >Fundação de Ciência, Tecnologia e Inovação de Fortaleza – Citinova</strong
+          >
+          <br />
+          Rua dos Pacajús, nº 33 - Praia de Iracema, Fortaleza - CE |
+          <br />
+          CEP: 60060-520<br />
+        </address>
+        <div class="social-media">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/FortalezaCitinova/" target="_blank"
+              ><i class="icon-social-facebook" title="Facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/explore/locations/389332341/citinova/"
+              target="_blank"
+              ><i class="icon-social-instagram" title="Instagram"></i
+            ></a>
+            <a href="https://www.youtube.com/@prefeiturafortaleza" target="_blank"
+              ><i class="icon-social-youtube" title="Youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<%- include('includes/footer') %>

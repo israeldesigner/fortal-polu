@@ -1,3 +1,3 @@
-exports.contatoRoute = (req, res) => {
-    res.send("Obrigado novo contato");
+exports.index = (req, res) => {
+  res.render('contato')
 }

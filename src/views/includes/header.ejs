@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mapa de poluentes Fortaleza CE</title>
     <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Sofia+Sans+Condensed&display=swap" rel="stylesheet"> -->
@@ -20,7 +24,7 @@
             <div class="col-lg-6 col-12 app-acessibilidadeMenu d-none d-md-flex align-items-center">
               <a
                 id="anchorMain"
-                class="mr-1"
+                class="mr-1 ms-sm-3"
                 href="#content-wrapper"
                 data-toggle="tooltip"
                 data-placement="top"
@@ -92,7 +96,7 @@
               >
             </div>
             <div class="col-lg-6 col-12 app-acessibilidadeItens d-none d-md-block">
-              <ul class="menu mb-0">
+              <ul class="menu mb-0 mx-3">
                 <li class="nav-item">
                   <a
                     href="https://acessoainformacao.fortaleza.ce.gov.br/"
@@ -141,7 +145,7 @@
     </section>
     <!--/acessibilidade-->
     <!--navbar-->
-    <section class="s-navMain bg-warning shadow">
+    <header class="s-navMain bg-warning shadow">
       <div class="container-xl">
         <nav id="header-nav" class="navbar navbar-expand-lg">
           <div class="s-navMain__logo">
@@ -157,12 +161,17 @@
               <img
                 src="./assets/img/logo-arqual.png"
                 width="110"
-                alt="Logo Prefeitura de Fortaleza"
+                alt="Logo qualidade do ar"
                 class="on-contrast-invert"
               />
             </a>
             <a href="/" class="">
-              <img src="./assets/img/logoPref.png" width="145" alt="Logo Prefeitura de Fortaleza" />
+              <img
+                src="./assets/img/logoPref.png"
+                class="on-contrast-invert"
+                width="145"
+                alt="Logo Prefeitura de Fortaleza"
+              />
             </a>
             <button
               class="navbar-toggler shadow-none ms-2 border-0"
@@ -194,7 +203,7 @@
                 <li class="nav-item mx-2">
                   <a
                     href="/sobre"
-                    class="nav-link nav-preinscricao ps-2 d-flex cursor-pointer align-items-center"
+                    class="nav-link nav-about ps-2 d-flex cursor-pointer align-items-center"
                   >
                     Sobre
                   </a>
@@ -202,7 +211,7 @@
                 <li class="nav-item mx-2">
                   <a
                     href="/analise-data"
-                    class="scroll nav-about nav-link ps-2 d-flex cursor-pointer align-items-center"
+                    class="scroll nav-analytic nav-link ps-2 d-flex cursor-pointer align-items-center"
                   >
                     Análise de Dados
                   </a>
@@ -210,15 +219,15 @@
                 <li class="nav-item mx-2">
                   <a
                     href="/politica-monitoramento"
-                    class="nav-link nav-cursos ps-2 d-flex cursor-pointer align-items-center"
+                    class="nav-link nav-policy ps-2 d-flex cursor-pointer align-items-center"
                   >
                     Política qualidade do ar
                   </a>
                 </li>
                 <li class="nav-item mx-2">
                   <a
-                    href="/"
-                    class="nav-link nav-fale-conosco ps-2 d-flex cursor-pointer align-items-center"
+                    href="/fale-conosco"
+                    class="nav-link nav-contact ps-2 d-flex cursor-pointer align-items-center"
                   >
                     Fale conosco
                   </a>
@@ -228,7 +237,7 @@
           </div>
         </nav>
       </div>
-    </section>
+    </header>
     <!--/navbar-->
   </body>
 </html>

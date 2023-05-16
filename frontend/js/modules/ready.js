@@ -8,6 +8,7 @@ import { initBootstrap } from './bootstrap'
 import { scrollFunc } from './scroll'
 import { acessibility } from './contrast'
 import { fontSize } from './fontSize'
+import { menu } from './menu'
 // import { aside } from './aside'
 // import { speech } from './speech'
 
@@ -33,8 +34,9 @@ ready(function () {
   })
   script()
   scrollFunc()
-  acessibility()
   fontSize()
+  menu()
+  acessibility()
 
   let mw = window.matchMedia('(max-width: 768px)')
   mobile(mw)

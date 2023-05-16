@@ -460,7 +460,7 @@ const leaflet = () => {
         createBlockText()
         markerPoint = L.icon(colorMarkerPm2)
         L.Marker.prototype.options.icon = markerPoint
-        L.marker([latitude_, longitude_], markerPoint).addTo(map).bindPopup(blocoTexto).openPopup()
+        L.marker([latitude_, longitude_], markerPoint).addTo(map).bindPopup(blocoTexto)
       }
     })
 
