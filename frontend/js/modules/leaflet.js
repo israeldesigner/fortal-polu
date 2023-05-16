@@ -45,6 +45,168 @@ const leaflet = () => {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map)
+    console.log('testando outro ponto')
+
+    const markWithOutPoint = {
+      iconUrl: './assets/img/Semponto.png',
+      iconRetinaUrl: './assets/img/Semponto.png',
+      iconSize: [40, 40],
+    }
+
+    const insertBlockText = (local) => {
+      let blockTexto = `
+      <div className="d-flex">                            
+          <div class="leaflet-title">                            
+              <h2 class="d-flex text-lowercase"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
+              class="mr-2" width="22" alt="marker"> ${local}
+              </h2>
+              <p>
+                  Monitor a ser instalado
+              </p>
+          </div>
+      </div>
+      `
+      return blockTexto
+    }
+
+    let markerPointNot = L.icon(markWithOutPoint)
+    L.Marker.prototype.options.icon = markerPointNot
+    L.marker([-3.82838, -38.55674])
+      .addTo(map)
+      .bindPopup(insertBlockText('SCSP - Av C X Av L - PREFEITO JOSÉ WALTER'))
+    L.marker([-3.71834, -38.46562])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - GODOFREDO DE CASTRO FILHO 2'))
+    L.marker([-3.81627, -38.53165])
+      .addTo(map)
+      .bindPopup(insertBlockText('SEGER - AV PRES JUSCELINO KUBITSCHEK X AV DOS PAROARAS'))
+    L.marker([-3.78753, -38.54793])
+      .addTo(map)
+      .bindPopup(insertBlockText('AMC - AV. EXPEDICIONÁRIOS X AV. DEDÉ BRASIL'))
+    L.marker([-3.78151, -38.50257]).addTo(map).bindPopup(insertBlockText('ARENINHA LAGOA DA ZEZA'))
+    L.marker([-3.82953, -38.46658]).addTo(map).bindPopup(insertBlockText('SME - ISABEL FERREIRA'))
+    L.marker([-3.83172, -38.49403])
+      .addTo(map)
+      .bindPopup(insertBlockText('AMC - RUA PADRE PEDRO DE ALENCAR X RUA TEN. JURANDIR DE ALENCA'))
+    L.marker([-3.83412, -38.56899])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - EMTI LEONEL DE MOURA BRIZOLA'))
+    L.marker([-3.7518, -38.52577])
+      .addTo(map)
+      .bindPopup(insertBlockText('PRAÇA NOSSA SENHORA DE FÁTIMA'))
+    L.marker([-3.73339, -38.49693]).addTo(map).bindPopup(insertBlockText('PRAÇA PORTUGAL'))
+    L.marker([-3.73158, -38.5449])
+      .addTo(map)
+      .bindPopup(insertBlockText('SEGER - AV BEZERRA DE MENEZES X AV JOSE JATAHY'))
+    L.marker([-3.86736, -38.49394])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - GUIOMAR DA SILVA ALMEIDA'))
+    L.marker([-3.84632, -38.52293])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - CÉSAR CALS DE OLIVEIRA NETO'))
+    L.marker([-3.76848, -38.5516])
+      .addTo(map)
+      .bindPopup(insertBlockText('SCSP - RUA ANTONIO FIUZA X RUA BARÃO DE SOBRAL'))
+    L.marker([-3.7238, -38.47711])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - EM PROFESSORA CONSUELO AMORA'))
+    L.marker([-3.71196, -38.55544])
+      .addTo(map)
+      .bindPopup(insertBlockText('SME - [ESCOLA MUNICIPAL / HILBERTO SILVA]'))
+    L.marker([-3.75852, -38.58386])
+      .addTo(map)
+      .bindPopup(insertBlockText('PRAÇA DOM LUSTOSA (Henrique Jorge)'))
+    L.marker([-3.72403, -38.5834])
+      .addTo(map)
+      .bindPopup(insertBlockText('AV MAJOR ASSIS X RUA ALBERTO FERREIRA'))
+    L.marker([-3.82881, -38.52133])
+      .addTo(map)
+      .bindPopup(insertBlockText('SCSP - AV JOR THOMAZ COELHO / AV PRS COSTA E SILVA'))
+
+    const colorBoaStatic = {
+      iconUrl: './assets/img/Boa.png',
+      iconRetinaUrl: './assets/img/Boa.png',
+      className: 'leaflet-boa',
+      iconSize: [40, 40],
+    }
+
+    const insertGreenText = (local) => {
+      let blocoTexto = `
+      <div classname="d-flex table__leaflet">                            
+                                        <div class="leaflet-title">                            
+                                            <h2 class="d-flex text-lowercase">
+                                                <img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
+                                                class="mr-2" width="22" height="auto" alt="marker">${local}</h2>
+                                            <table class="table_leaflet--table  w-100">
+                                                <thead class="text-xl">
+                                                    <tr><th>Poluentes</th>
+                                                    <th>Valores*</th>
+                                                    <th>Medida</th>
+                                                    <th>Nível</th>
+                                                </tr></thead> 
+                                                <tbody>                                                          
+                                                  <tr style="background: #8ae271">
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>2.5</sub></h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">13</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">
+                                    <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa"></h4></td>
+                                                  </tr>   
+                                                  <tr>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">PM<sub>10</sub></h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">15</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap">
+                                    <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade boa">
+                                    </td>
+                                                  </tr>    
+                                                  <tr>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">11280.00</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap">
+                                    <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade pessima">
+                                    </td>
+                                                  </tr>    
+                                                  <tr>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">154.11</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap">
+                                    <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada">
+                                    </td>
+                                                  </tr>    
+                                                  <tr>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">2245.37</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap">
+                                    <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada">
+                                    </td>
+                                                  </tr>    
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                            <em class="sofia-font text-xs">
+                                              *No momento os dados foram coletados às. 4:40:39 do dia 5/10/2023</em>
+                                        </div>
+      
+      `
+      return blocoTexto
+    }
+
+    let markerPointgreen = L.icon(colorBoaStatic)
+    L.Marker.prototype.options.icon = markerPointgreen
+
+    L.marker([-3.72612, -38.4951]).addTo(map).bindPopup(insertGreenText('PROJ. WIFOR BM'))
+    L.marker([-3.72546, -38.53269])
+      .addTo(map)
+      .bindPopup(
+        insertGreenText('SESEC - R. GUILHERME ROCHA X AV. TRISTÃO GONÇALVES (Pç da lagoinha)')
+      )
+    L.marker([-3.72183, -38.47893])
+      .addTo(map)
+      .bindPopup(insertGreenText('AMC - AV. BEIRA MAR X AV. ABOLIÇÃO'))
 
     //init firebase
     const app = initializeApp(firebaseConfig)
@@ -81,15 +243,15 @@ const leaflet = () => {
 
       for (let i = 0; i < objects392.length; i++) {
         const element = objects392[i]
-        const local_moqaID = element.moqaID
+        const localMoqaID = element.moqaID
         console.log(element)
 
-        if (local_moqaID == 'tiqam392') {
+        if (localMoqaID == 'tiqam392') {
           latitude_ = -3.7899023034813
           longitude_ = -38.5868264581879
           local = 'Siqueira '
         }
-        if (local_moqaID == 'tiqam392nova') {
+        if (localMoqaID == 'tiqam392nova') {
           latitude_ = -3.7192162962032
           longitude_ = -38.514145586396
           local = 'Fundação de Ciência, Tecnologia e Inovação de Fortaleza – Citinova'
@@ -373,18 +535,6 @@ const leaflet = () => {
                                             <h2 class="d-flex">
                                                 <img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
                                                 class="mr-2" width="22" height="auto" alt="marker">${local}</h2>
-                                            <div class="d-flex mb-eq">
-                                                <div class="d-flex mr-eq">  
-                                                    <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" height="auto" /> 
-                                                    <strong class="blue-hum"> ${parseFloat(
-                                                      _exTmp
-                                                    ).toFixed(0)}ºC</strong>
-                                                </div>
-                                                <div class="d-flex">
-                                                    <img src="./assets/img/umidade.png" alt="icone de umidade" width="28" height="auto" /> 
-                                                    <strong class="orange-temp">${checkHumi} </strong>
-                                                </div>
-                                            </div>
                                             <table class="table_leaflet--table  w-100">
                                                 <thead class="text-xl">
                                                     <th>Poluentes</th>
@@ -481,6 +631,15 @@ const leaflet = () => {
     }
 
     checkAut()
+
+    // L.marker([3.82838, -38.55674], {
+    //   color: 'Gray',
+    //   fillColor: '#e4e4e4',
+    //   fillOpacity: '#f2f2f2',
+    //   radius: _radius,
+    // })
+    //   .addTo(map)
+    //   .bindPopup('não tem dado')
   }
   const toggleActive = document.querySelectorAll('.toggleActive')
   const toggleDesactive = document.querySelectorAll('.toggleDesactive')
