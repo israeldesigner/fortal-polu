@@ -1,13 +1,32 @@
-@media (min-width: 991px) {
+
+
+
+@media (min-width: 1366px) {
   .s-hero {
     .s-hero__block {
       height: 75vh;
+      .s-hero__block--img {
+        min-height: auto;
+      }
     }
   }
 }
+@media (max-width: 1366px) {
+  .s-hero {
+    .s-hero__block {
+      .s-hero__block--img {
+        width: 80%;
+      }
+    }
+  }
+}
+
 @media (max-width: 991px) {
-  .s-hero__block--img {
-    height: 540px;
-    border: 1px solid red;
+  .s-hero {
+    .s-hero__block {
+      .s-hero__block--img {
+        width: 100%;
+      }
+    }
   }
 }
