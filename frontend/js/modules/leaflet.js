@@ -162,15 +162,15 @@ const leaflet = () => {
                                                   </tr>    
                                                   <tr>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
-                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">11280.00</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">13</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap">
-                                    <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade pessima">
+                                    <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade pessima">
                                     </td>
                                                   </tr>    
                                                   <tr>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">O<sub>3</sub></h4></td>
-                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">154.11</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">119,11</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap">
                                     <img src="./assets/img/Moderada.png" class="leaflet-nvalue" alt="imagem qualidade moderada">
@@ -178,17 +178,17 @@ const leaflet = () => {
                                                   </tr>    
                                                   <tr>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">NO<sub>2</sub></h4></td>
-                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">2245.37</h4></td>
+                                                      <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">129,37</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">µg/m³</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap">
-                                    <img src="./assets/img/pessima.png" class="leaflet-nvalue" alt="imagem qualidade moderada">
+                                    <img src="./assets/img/Boa.png" class="leaflet-nvalue" alt="imagem qualidade moderada">
                                     </td>
                                                   </tr>    
                                                 </tbody>
                                             </table>
                                             </div>
                                             <em class="sofia-font text-xs">
-                                              *No momento os dados foram coletados às. 4:40:39 do dia 5/10/2023</em>
+                                              *No momento os dados foram coletados às. 4:40:39</em>
                                         </div>
       
       `
@@ -273,10 +273,12 @@ const leaflet = () => {
         const o3const = 48
         const formCalc = 0.082
         const formCalcDiv = 273.15
-        const _no2ug = (no2Const * (_no2ppm * 1000)) / (formCalc * (_exTmp + formCalcDiv))
+        const _no2ug = (no2Const * (_no2ppm * 1000)) / (formCalc * (_exTmp + formCalcDiv)) / 100000
         console.log(_no2ug)
-        const o3ug = (o3const * (_o3ug * 1000)) / (formCalc * (_exTmp + formCalcDiv))
+        const o3ug = (o3const * (_o3ug * 1000)) / (formCalc * (_exTmp + formCalcDiv)) / 10000
         console.log(o3ug)
+        const coFinal = _coppm / 10000
+        console.log(coFinal)
 
         let blocoUmidade = `${parseFloat(_humidity).toFixed(0)}%`
         let checkHumi = !isNaN(_humidity) ? blocoUmidade : (blocoUmidade = `-`)
@@ -558,7 +560,7 @@ const leaflet = () => {
                                                   <tr>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">CO</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap"><h4 class="text-xl">${parseFloat(
-                                                        _coppm
+                                                        coFinal
                                                       ).toFixed(2)}</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap"> <h4 class="text-xl">ppm</h4></td>
                                                       <td class="px-2 py-2 whitespace-nowrap">${coPpmmText}</td>
@@ -583,7 +585,7 @@ const leaflet = () => {
                                             </table>
                                             </div>
                                             <em class="sofia-font text-xs">
-                                              *No momento os dados foram coletados às. ${_hour} do dia ${_data}</em>
+                                              *No momento os dados foram coletados às ${_hour}.</em>
                                         </div>
                                         `
           } else {
