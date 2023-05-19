@@ -5,7 +5,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY .docker/nginx/timeout.conf /etc/nginx/conf.d/
 COPY .docker/nginx/default.conf /etc/nginx/conf.d/
 
-COPY .docker/nginx/fortalezacapacita.crt /etc/ssl/
-COPY .docker/nginx/fortalezacapacita.key /etc/ssl/
+COPY .docker/nginx/fortalpol.crt /etc/ssl/
+COPY .docker/nginx/fortalpol.key /etc/ssl/
 
 COPY /public/ /usr/share/nginx/html/
