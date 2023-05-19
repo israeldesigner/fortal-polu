@@ -8,7 +8,7 @@
     "start": "nodemon server.js --ignore public --ignore frontend",
     "dev": "cross-env NODE_ENV=development webpack -w --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack -w --config config/webpack.prod.js",
-    "production": "pm2 start server.js --name nodepm --watch -i 1",
+    "production": "pm2 start server.js --name fpa --watch -i 1",
     "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "keywords": [],
