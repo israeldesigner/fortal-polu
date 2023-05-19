@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js --ignore public --ignore frontend",
+    "start": "pm2 start server.js --name fpa --watch -i 1",
     "dev": "cross-env NODE_ENV=development webpack -w --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack -w --config config/webpack.prod.js",
-    "production": "pm2 start server.js --name fpa --watch -i 1",
+    "production": "nodemon server.js --ignore public --ignore frontend",
     "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "keywords": [],

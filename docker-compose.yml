@@ -1,45 +1,41 @@
-version: '3.8'
+version: "3.7"
+
 services:
+  nginx:
+    build:
+        context: .
+        dockerfile: .docker/nginx/Dockerfile
+    container_name: "nginx"
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
 
   app:
     build:
       context: .
-    container_name: fort-pol
+    container_name: fortal-pol
     networks:
       - app-network
     volumes:
       - .:/usr/src/app
     tty: true
     ports:
-      - '5000:5000'
-
-  nginx:
-    build:
-        context: .
-        dockerfile: .docker/nginx/Dockerfile
-    container_name: 'nginx'
-    restart: always
-    tty: true
-    ports:
-      - '80:80'
-      - '443:443'
-    networks:
-      - app-network
-
-  networks:
-    app-network:
-      driver: bridge
+      - "3000:3000"
 
   mongodb:
     image : mongo
     container_name: mongobd
     command: [--auth]
-    # environment:
-      # - MONGO_INITDB_ROOT_USERNAME=DB_USER
-      # - MONGO_INITDB_ROOT_PASSWORD=DB_PASS
-      # - MONGO_INITDB_DATABASE=DB_NAME
     volumes:
       - ./mongobd/database:/data/db
     ports:
       - 27017:27017
     restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
