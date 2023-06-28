@@ -92,167 +92,167 @@ class Excel {
 
   async buscaListaThomaz() {
     const listaCcd = await ExcelModel.find({ Local: /Thomaz/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaCcd
   }
 
   async buscaHelderCam() {
     const listaHelderCam = await ExcelModel.find({ Local: /Hélder/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaHelderCam
   }
 
   async buscaMajorAssis() {
     const listaMajorAssis = await ExcelModel.find({ Local: /Major Assis/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaMajorAssis
   }
 
   async buscaDomLustosa() {
     const listaDomLustosa = await ExcelModel.find({ Local: /Dom Lustosa/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaDomLustosa
   }
 
   async buscaHilbertoSilva() {
     const listaHilbertoSil = await ExcelModel.find({ Local: /Hilberto Silva/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaHilbertoSil
   }
 
   async buscaConsueloAmora() {
     const listaConsueloAmo = await ExcelModel.find({ Local: /Consuelo Amora/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaConsueloAmo
   }
 
   async buscaBaraoSobral() {
     const listaBaraoSob = await ExcelModel.find({ Local: /Barão de Sobral/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaBaraoSob
   }
 
   async buscaCezarCals() {
     const listaCezarCals = await ExcelModel.find({ Local: /César Cals/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaCezarCals
   }
 
   async buscaGiomarSilva() {
     const listaGiomarSilv = await ExcelModel.find({ Local: /Guiomar da Silva/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaGiomarSilv
   }
 
   async buscaBezerraMenezes() {
     const listaBezerraMen = await ExcelModel.find({ Local: /José Jatahy/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaBezerraMen
   }
 
   async buscaPracaPortugal() {
     const listaPracaPortu = await ExcelModel.find({ Local: /Praça Portugal/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaPracaPortu
   }
 
   async buscaNautico() {
     const listaNautico = await ExcelModel.find({ Local: /Nautico/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaNautico
   }
 
   async buscaPracaLagoinha() {
     const listaPracaLagoinha = await ExcelModel.find({ Local: /Praça da Lagoinha/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaPracaLagoinha
   }
 
   async buscaPracaFatima() {
     const listaPracaFatima = await ExcelModel.find({ Local: /de Fátima/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaPracaFatima
   }
 
   async buscaLeonelMoura() {
     const listaLeonelMoura = await ExcelModel.find({ Local: /Leonel de Moura/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaLeonelMoura
   }
 
   async buscaPedroDeAlencar() {
     const listaPedroDeAlencar = await ExcelModel.find({ Local: /Pedro de Alencar/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaPedroDeAlencar
   }
 
   async buscaIsabelFerreira() {
     const listaIsabelFerreira = await ExcelModel.find({ Local: /Isabel Ferreira/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaIsabelFerreira
   }
 
   async buscaBeiraMar() {
     const listaBeiraMar = await ExcelModel.find({ Local: /Beira Mar/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaBeiraMar
   }
 
   async buscaLagoaZeza() {
     const listaLagoaZeza = await ExcelModel.find({ Local: /Lagoa da Zeza/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaLagoaZeza
   }
 
   async buscaExpedicionarios() {
     const listaExpedicionarios = await ExcelModel.find({ Local: /Expedicionários/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaExpedicionarios
   }
 
   async buscaKubitschek() {
     const listaKubitschek = await ExcelModel.find({ Local: /Kubitschek/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaKubitschek
   }
 
   async buscaGodofredoCastro() {
     const listaGodofredCast = await ExcelModel.find({ Local: /Godofredo de Castro/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaGodofredCast
   }
 
   async buscaJoseWalte() {
     const listaJoseWalter = await ExcelModel.find({ Local: /José Walter/i })
-      .limit(6)
+      .limit(24)
       .sort({ $natural: -1 })
     return listaJoseWalter
   }
 
   async getAllSheets() {
-    const allSheets = await ExcelModel.find().limit(6).sort({ $natural: -1 })
+    const allSheets = await ExcelModel.find().limit(1).sort({ $natural: -1 })
     console.log(allSheets)
     return allSheets
   }

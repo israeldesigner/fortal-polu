@@ -126,33 +126,29 @@
     border: $black !important;
     color: $white !important ;
   }
-}
-
-.contrast img.on-contrast-force-gray {
-  -webkit-filter: grayscale(100%) contrast(120%);
-  filter: grayscale(100%) contrast(120%);
-}
-
-.contrast img.on-contrast-force-white {
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
-}
-
-.contrast {
+  .s-scessibilityBlock {
+    div {
+      background: black;
+      border: 1px solid yellow;
+      a,
+      span {
+        color: yellow !important;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
   img {
     -webkit-filter: grayscale(100%) contrast(120%);
     filter: grayscale(100%) contrast(120%);
   }
-}
 
-.contrast {
   img.on-contrast-invert {
     -webkit-filter: brightness(1) invert(1) !important;
     filter: brightness(1) invert(1) !important;
   }
-}
 
-.contrast {
   .s-acessibility {
     background: $black !important;
     border-top: 1px solid $white;
@@ -173,57 +169,47 @@
       background: $black !important;
     }
   }
-}
 
-.contrast {
   #footer {
     background: $black;
     border-top: 5px solid $white;
   }
-}
 
-.contrast a i {
-  color: yellow !important;
-}
+  .inputGroup-header .form-control {
+    color: #fff !important;
+    border: 1px solid #fff !important;
+  }
 
-.contrast .inputGroup-header .form-control {
-  color: #fff !important;
-  border: 1px solid #fff !important;
-}
+  .form-control {
+    color: #fff !important;
+    border: 1px solid #fff !important;
+  }
+  i {
+    background: black !important;
+    color: white !important;
+  }
+  img.on-contrast-force-gray {
+    -webkit-filter: grayscale(100%) contrast(120%);
+    filter: grayscale(100%) contrast(120%);
+  }
 
-.contrast .form-control {
-  color: #fff !important;
-  border: 1px solid #fff !important;
-}
-
-.contrast small {
-  background: black;
-  color: white;
-}
-
-.contrast i {
-  background: black !important;
-  color: white !important;
-}
-
-.contrast {
-  .s-scessibilityBlock {
-    div {
-      background: black;
-      border: 1px solid yellow;
-      a,
-      span {
-        color: yellow !important;
-      }
-      &:hover {
-        opacity: 0.7;
-      }
+  img.on-contrast-force-white {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+  a{
+    i {
+      color: yellow !important;
     }
+  }
+
+  small {
+    background: black;
+    color: white;
   }
 }
 
 .s-acessibility {
-  background: none;
   width: 100%;
   margin-right: auto;
   margin-left: auto;

@@ -11,7 +11,6 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log(process.env.CONNECTIONSTRING)
     console.log('conectei a base de dados')
     app.emit('pronto')
   })

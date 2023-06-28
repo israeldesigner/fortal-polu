@@ -1,7 +1,3 @@
-import { script } from './script'
-// import { colormode } from './colormode'
-// import { teste } from './convert'
-// import { tooltip } from './tooltip'
 import { leaflet } from './leaflet'
 import { mobile } from './mobile'
 import { initBootstrap } from './bootstrap'
@@ -9,8 +5,7 @@ import { scrollFunc } from './scroll'
 import { acessibility } from './contrast'
 import { fontSize } from './fontSize'
 import { menu } from './menu'
-// import { aside } from './aside'
-// import { speech } from './speech'
+import { chartAnalytcs } from './chartjs'
 
 /**
  * Run event after DOM is ready
@@ -27,12 +22,12 @@ function ready(fn) {
 
 ready(function () {
   leaflet()
+  chartAnalytcs()
   initBootstrap({
     tooltip: true,
     popover: true,
     toasts: true,
   })
-  script()
   scrollFunc()
   fontSize()
   menu()
