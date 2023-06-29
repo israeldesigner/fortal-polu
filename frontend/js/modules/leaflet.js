@@ -35,7 +35,7 @@ const leaflet = () => {
     const _arrayIndicesPm10 = [50, 100, 150, 250, 600]
     const _arrayIndicesCoppm = [10, 12, 14, 16, 50]
     const _arrayIndicesNo2 = [200, 240, 320, 1130, 3750]
-    const delay = 1000
+    const delay = 36000000
 
     const fetchApiData = async () => {
       let methodsFetc = {
@@ -47,7 +47,6 @@ const leaflet = () => {
       try {
         let response = await fetch(`${base_url}/api_excel`, methodsFetc)
         let responseData = await response.json()
-        console.log(responseData)
         if (!response.ok) {
           throw new Error(`HTTP error ${response.status}`)
         }
@@ -62,17 +61,19 @@ const leaflet = () => {
           // }
 
           //   (let i = 5 - 1; i >= 0; i--)
-          for (let i = 0; i < 6; i++) {
+          for (let i = 0; i < 25; i++) {
             setTimeout(() => {
               for (const key in responseData) {
                 if (Object.hasOwnProperty.call(responseData, key)) {
                   // const element = responseData[key].slice().reverse()
                   const element = responseData[key]
                   let lastElement = element[i]
+                  console.log(lastElement)
                   let _pLocal = lastElement.Local
                   let _latitude = lastElement.Latitude
                   let _longitude = lastElement.Longitude
                   let arrayLatLong = [lastElement.Latitude, lastElement.Longitude]
+                  const _id = lastElement._id
                   const _pm2ug = lastElement.PM2ug
                   const _humidity = lastElement.Humidity
                   const _coppm = lastElement.COppm
@@ -338,7 +339,8 @@ const leaflet = () => {
                                                   <div class="leaflet-title">                            
                                                       <h2 class="d-flex">
                                                           <img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png" 
-                                                          class="mr-2" width="22" alt="marker">${_pLocal}</h2>
+                                                          class="mr-2" width="22" alt="marker">${_pLocal}<br>
+                                                          </h2>
                                                       <div class="d-flex mb-eq">
                                                           <div class="d-flex mr-eq">  
                                                               <img src="./assets/img/extemp.png" alt="icone de temperatura" width="20" /> 
@@ -404,9 +406,7 @@ const leaflet = () => {
                                                           </tbody>
                                                       </table>
                                                       </div>
-                                                      <em class="sofia-font text-xs">
-                                                        *No momento os dados dos medidores 
-                                                        são fictícios. ${_hour}</em>
+                                                      <em class="sofia-font text-xs">/em>
                                                   </div>
                                                   `
                     } else {

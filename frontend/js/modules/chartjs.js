@@ -6,7 +6,6 @@ const chartAnalytcs = async () => {
   let pathArray = window.location.pathname.split('/')
   let base_url = window.location.origin
   if (pathArray[1] == 'analise-data') {
-
     const ctx = document.getElementById('myChart')
     const ctxGpt = document.getElementById('meuGrafico')
     const ctxArea = document.getElementById('myAreaChart')
@@ -36,6 +35,7 @@ const chartAnalytcs = async () => {
     const arrayLastLabels = []
     const arrayLastPm2 = []
     const arrayOptionMonitores = []
+    const arrayHours = []
 
     let methodsFetc = {
       method: 'GET',
@@ -48,8 +48,9 @@ const chartAnalytcs = async () => {
       let responseData = await response.json()
       for (const key in responseData) {
         const dataObjects = responseData[key].slice().reverse()
-        if(dataObjects.length > 0 ){
-          const lastItemArray = dataObjects[dataObjects.length -1]
+        if (dataObjects.length > 0) {
+          console.log(dataObjects)
+          const lastItemArray = dataObjects[dataObjects.length - 1]
           arrayLastLabels.push(...[lastItemArray.Local])
           arrayLastPm2.push(...[lastItemArray.PM2ug])
         }
@@ -57,24 +58,22 @@ const chartAnalytcs = async () => {
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
-    }catch (e) {
+    } catch (e) {
       console.log(e)
     }
 
-
-    if(arrayLastLabels.length > 0) {
+    if (arrayLastLabels.length > 0) {
       for (let i = 0; i < arrayLastLabels.length; i++) {
-        const element = arrayLastLabels[i];        
+        const element = arrayLastLabels[i]
         arrayOptionMonitores.push(...[element])
       }
       let todosOsLugares = `Todos os monitores`
       arrayOptionMonitores.unshift(todosOsLugares)
-      console.log(arrayOptionMonitores)
       for (let i = 0; i < arrayOptionMonitores.length; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = arrayOptionMonitores[i];
-        formSelector.appendChild(option);
+        const option = document.createElement('option')
+        option.value = i
+        option.textContent = arrayOptionMonitores[i]
+        formSelector.appendChild(option)
       }
     }
 
@@ -268,8 +267,6 @@ const chartAnalytcs = async () => {
               backgroundColor: 'rgba(50, 20, 192, 0.2)', // Cor de preenchimento da área
               borderColor: 'rgba(50, 20, 192, 1)', // Cor da borda
               borderWidth: 1, // Largura da borda
-              cubicInterpolationMode: 'monotone',
-              fill: true,
             },
           ],
         },

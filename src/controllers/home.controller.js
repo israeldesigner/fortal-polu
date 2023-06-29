@@ -33,7 +33,6 @@ exports.apiExcel = async (req, res) => {
   const tableExpedic = await excel.buscaExpedicionarios()
   const tableGodoFre = await excel.buscaGodofredoCastro()
   const tableKubiche = await excel.buscaKubitschek()
-  const tableJoseWal = await excel.buscaJoseWalte()
 
   jsonObject = {
     tablesThomaz,
@@ -58,7 +57,6 @@ exports.apiExcel = async (req, res) => {
     tableExpedic,
     tableGodoFre,
     tableKubiche,
-    tableJoseWal,
   }
   res.json(jsonObject)
 }
