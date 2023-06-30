@@ -6,6 +6,18 @@ const chartAnalytcs = async () => {
   let pathArray = window.location.pathname.split('/')
   let base_url = window.location.origin
   if (pathArray[1] == 'analise-data') {
+
+    const select = document.getElementById('form-selectPlace')
+    const elementformPm2 = document.getElementById('formPm2Geral')
+    const elementDiaria = document.getElementById('formDiaria')
+    const elementMensal = document.getElementById('formMensal')
+    const elementDiariaPm10 = document.getElementById('formDiariaPm10')
+    const elementMensalPm10 = document.getElementById('formMensalPm10')
+    // elementDiaria.style.display = 'none'
+    // elementMensal.style.display = 'none'
+    // elementDiariaPm10.style.display = 'none'
+    // elementMensalPm10.style.display = 'none'
+
     const ctx = document.getElementById('myChart')
     const ctxGpt = document.getElementById('meuGrafico')
     const ctxArea = document.getElementById('myAreaChart')
@@ -37,6 +49,10 @@ const chartAnalytcs = async () => {
     const arrayLastPm2 = []
     const arrayOptionMonitores = []
     const arrayHours = []
+    const arrayResponseData = {}
+    const arrayValuesSelect = []
+    const arrayHourPlace = []
+    const arrayPm2Daily =[]
 
     let methodsFetc = {
       method: 'GET',
@@ -51,10 +67,13 @@ const chartAnalytcs = async () => {
         loadingElement.classList.add('toggleDesactive');
       }
       let responseData = await response.json()
+      Object.entries(responseData).forEach(([key, value]) => {
+        arrayResponseData[key] = value;
+      });
       for (const key in responseData) {
+        arrayValuesSelect.push(...[key])
         const dataObjects = responseData[key].slice().reverse()
         if (dataObjects.length > 0) {
-          console.log(dataObjects)
           const lastItemArray = dataObjects[dataObjects.length - 1]
           arrayLastLabels.push(...[lastItemArray.Local])
           arrayLastPm2.push(...[lastItemArray.PM2ug])
@@ -73,10 +92,12 @@ const chartAnalytcs = async () => {
         arrayOptionMonitores.push(...[element])
       }
       let todosOsLugares = `Todos os monitores`
+      let selectTodosMon = `todosOsMon`
       arrayOptionMonitores.unshift(todosOsLugares)
+      arrayValuesSelect.unshift(selectTodosMon)
       for (let i = 0; i < arrayOptionMonitores.length; i++) {
         const option = document.createElement('option')
-        option.value = i
+        option.value = arrayValuesSelect[i]
         option.textContent = arrayOptionMonitores[i]
         formSelector.appendChild(option)
       }
@@ -94,41 +115,29 @@ const chartAnalytcs = async () => {
     dadosOrdenados.sort((a, b) => a.data - b.data)
     const labelsOrdenados = dadosOrdenados.map((item) => item.label)
     const dataOrdenados = dadosOrdenados.map((item) => {
-      console.log(item)
-      console.log(item.data)
 
       if (item.data > 1 && item.data < _arrayIndicesPm2u[0]) {
-        console.log('Nível bom')
         arrayBgColors.push(...[colorGreen])
         arrayBorderColors.push(...[borderGreen])
       }
       if (item.data > _arrayIndicesPm2u[0] && item.data < _arrayIndicesPm2u[1]) {
-        console.log('Nível moderado')
         arrayBgColors.push(...[colorYellow])
         arrayBorderColors.push(...[borderYellow])
       }
       if (item.data > _arrayIndicesPm2u[1] && item.data < _arrayIndicesPm2u[2]) {
-        console.log('Nível ruim')
         arrayBgColors.push(...[colorOrange])
         arrayBorderColors.push(...[borderOrange])
       }
       if (item.data > _arrayIndicesPm2u[2] && item.data < _arrayIndicesPm2u[3]) {
-        console.log('Nível muito ruim')
         arrayBgColors.push(...[colorRed])
         arrayBorderColors.push(...[borderRed])
       }
       if (item.data > _arrayIndicesPm2u[3] && item.data < _arrayIndicesPm2u[4]) {
         arrayBgColors.push(...[colorPurple])
         arrayBorderColors.push(...[borderPurple])
-        console.log('Nível péssima')
       }
       return item.data
     })
-
-    // console.log(arrayBgColors)
-    // console.log(arrayBgColors.length)
-    // console.log(labelsOrdenados.length)
-    // console.log(dataOrdenados.lenghts)
 
     const dadosFinalBar = {
       labels: labelsOrdenados,
@@ -160,137 +169,6 @@ const chartAnalytcs = async () => {
       },
     }
 
-    if (ctx) {
-      const ctxFinal = ctx.getContext('2d')
-      new Chart(ctxFinal, {
-        type: 'bar',
-        data: dadosFinalBar,
-        options: opcoes,
-      })
-    }
-
-    const arrayRandomData = []
-
-    for (let i = 0; i < 28; i++) {
-      const randomNumber = Math.floor(Math.random() * (255 - 7 + 1)) + 7
-      arrayRandomData.push(randomNumber)
-    }
-
-    if (ctxGpt) {
-      new Chart(ctxGpt, {
-        type: 'line', // Defina o tipo como 'line' para um gráfico de área
-        data: {
-          labels: [
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7',
-            '8',
-            '9',
-            '10',
-            '11',
-            '12',
-            '13',
-            '14',
-            '15',
-            '16',
-            '17',
-            '18',
-            '19',
-            '20',
-            '21',
-            '22',
-            '23',
-            '24',
-            '25',
-            '26',
-            '27',
-            '28',
-          ], // Rótulos dos dados no eixo X
-          datasets: [
-            {
-              label: 'Meu Gráfico de Área', // Rótulo do gráfico
-              data: arrayRandomData, // Dados para o gráfico
-              backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de preenchimento da área
-              borderColor: 'rgba(75, 192, 192, 1)', // Cor da borda
-              borderWidth: 1, // Largura da borda
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          responsive: true, // Torna o gráfico responsivo ao redimensionar a janela
-        },
-      })
-    }
-
-    const arrayRandomDataHour = []
-
-    for (let i = 0; i < 28; i++) {
-      const randomNumber = Math.floor(Math.random() * (255 - 7 + 1)) + 7
-      arrayRandomDataHour.push(randomNumber)
-    }
-
-    if (ctxArea) {
-      new Chart(ctxArea, {
-        type: 'bar',
-        data: {
-          labels: [
-            '00h',
-            '1h',
-            '2h',
-            '3h',
-            '4h',
-            '5h',
-            '6h',
-            '7h',
-            '8h',
-            '9h',
-            '10h',
-            '11h',
-            '12h',
-            '13h',
-            '14h',
-            '15h',
-            '16h',
-            '17h',
-            '18h',
-            '19h',
-            '20h',
-            '21h',
-            '22h',
-            '23h',
-          ], // Rótulos dos dados no eixo X
-          datasets: [
-            {
-              label: 'Média pm10', // Rótulo do gráfico
-              data: arrayRandomDataHour, // Dados para o gráfico
-              backgroundColor: 'rgba(50, 20, 192, 0.2)', // Cor de preenchimento da área
-              borderColor: 'rgba(50, 20, 192, 1)', // Cor da borda
-              borderWidth: 1, // Largura da borda
-            },
-          ],
-        },
-        options: opcoes,
-      })
-    }
-
-    const select = document.getElementById('form-selectPlace')
-
-    const elementformPm2 = document.getElementById('formPm2Geral')
-    const elementDiaria = document.getElementById('formDiaria')
-    const elementMensal = document.getElementById('formMensal')
-    const elementDiariaPm10 = document.getElementById('formDiariaPm10')
-    const elementMensalPm10 = document.getElementById('formMensalPm10')
-    elementDiaria.style.display = 'none'
-    elementMensal.style.display = 'none'
-    elementDiariaPm10.style.display = 'none'
-    elementMensalPm10.style.display = 'none'
-
     function checkRadios() {
       const radios = document.getElementsByName('radioPeriodicoPol')
 
@@ -311,19 +189,100 @@ const chartAnalytcs = async () => {
     }
 
     select.addEventListener('change', function () {
-      if (select.value === '1') {
-        elementDiaria.style.display = 'block'
-        elementMensal.style.display = 'none'
-        elementformPm2.style.display = 'none'
+      const selectedValue = select.value;
+      if(arrayResponseData){
+        for (const key in arrayResponseData) {
+          if (Object.hasOwnProperty.call(arrayResponseData, key)) {
+            const elementData = arrayResponseData[key]
+            if(selectedValue === key ){
+              console.log("são iguais")
+              console.log(elementData)
+              arrayHourPlace.splice(0, arrayHourPlace.length);
+              arrayPm2Daily.splice(0, arrayPm2Daily.length);
+              for (let i = 0; i < elementData.length; i++) {
+                const testElem = elementData[i];
+                let numberHour = `${testElem.Hour}`
+                let numberPm2 =  `${testElem.PM2ug}`
+                arrayHourPlace.push(...[numberHour])
+                arrayPm2Daily.push(...[numberPm2])
+              }
+              console.log(arrayHourPlace)
+              console.log(arrayPm2Daily)              
+
+              let chartDinamyc = new Chart(ctxArea, {
+                type: 'bar',
+                data: {
+                  labels: arrayHourPlace,
+                  datasets: [
+                    {
+                      label: 'Média pm2.5', // Rótulo do gráfico
+                      data: arrayPm2Daily, // Dados para o gráfico
+                      backgroundColor: 'rgba(50, 20, 192, 0.2)', // Cor de preenchimento da área
+                      borderColor: 'rgba(50, 20, 192, 1)', // Cor da borda
+                      borderWidth: 1, // Largura da borda
+                    },
+                  ],
+                },
+                options: {
+                  indexAxis: 'y', // Define o eixo vertical como o eixo do índice (vertical)
+                  scales: {
+                    y: {
+                      beginAtZero: true // Começa o eixo vertical no valor zero
+                    }
+                  }
+                }
+              })
+
+              chartDinamyc.destroy();
+
+              chartDinamyc = new Chart(ctxArea, {
+                type: 'bar',
+                data: {
+                  labels: arrayHourPlace,
+                  datasets: [
+                    {
+                      label: 'Média pm2.5', // Rótulo do gráfico
+                      data: arrayPm2Daily, // Dados para o gráfico
+                      backgroundColor: 'rgba(50, 20, 192, 0.2)', // Cor de preenchimento da área
+                      borderColor: 'rgba(50, 20, 192, 1)', // Cor da borda
+                      borderWidth: 1, // Largura da borda
+                    },
+                  ],
+                },
+                options: {
+                  indexAxis: 'y', // Define o eixo vertical como o eixo do índice (vertical)
+                  scales: {
+                    y: {
+                      beginAtZero: true // Começa o eixo vertical no valor zero
+                    }
+                  }
+                }
+              })
+
+            }else{
+              // elementDiaria.style.display = 'none'
+              // elementMensal.style.display = 'none'
+              // elementformPm2.style.display = 'block'
+            }
+          }
+        }
       }
-      if (select.value === '0') {
-        elementDiaria.style.display = 'none'
-        elementMensal.style.display = 'none'
-        elementformPm2.style.display = 'block'
-      }
+      
     })
 
+    if (ctx) {
+      const ctxFinal = ctx.getContext('2d')
+      new Chart(ctxFinal, {
+        type: 'bar',
+        data: dadosFinalBar,
+        options: opcoes,
+      })
+    }
+
+
+
     checkRadios()
+
   }
 }
 
