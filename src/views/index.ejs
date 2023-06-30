@@ -47,7 +47,10 @@
      <h2 class="text-success text-center mb-5"> Mapa Qualidade do Ar teste</h2>
      <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-10 col-md-12">
+        <div class="col-lg-10 col-md-12 position-relative">
+          <div class="position-absolute top-50 start-50 zindex-popover text-center" style="z-index: 1040;">
+            <span id="loading">Carregando...<img src="./assets/img/loading.gif" width="50" alt="loading "></span>
+          </div>
           <div id="map" class="border-radius-xl">
           </div>
           <div class="row mt-4 s-map__row">

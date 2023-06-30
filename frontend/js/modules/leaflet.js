@@ -12,7 +12,7 @@ const leaflet = () => {
     }).addTo(map)
 
     let base_url = window.location.origin
-
+    const loadingElement = document.querySelector('#loading');
     const arrayCo2 = [10, 12, 14, 16, 50]
     const arrayO3 = [100, 130, 160, 200, 800]
     const co2description = `O monóxido de carbono é um gás altamente tóxico, 
@@ -46,6 +46,9 @@ const leaflet = () => {
       }
       try {
         let response = await fetch(`${base_url}/api_excel`, methodsFetc)
+        if( response.status == 200 ){
+          loadingElement.classList.add('toggleDesactive');
+        }
         let responseData = await response.json()
         if (!response.ok) {
           throw new Error(`HTTP error ${response.status}`)

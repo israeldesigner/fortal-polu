@@ -11,6 +11,7 @@ const chartAnalytcs = async () => {
     const ctxArea = document.getElementById('myAreaChart')
     const pieChart = document.querySelector('#pieChart')
     const formSelector = document.querySelector('#form-selectPlace')
+    const loadingElement = document.querySelector('#loading');
 
     const _arrayIndicesPm2u = [25, 50, 75, 125, 300]
     const _arrayIndicesPm10 = [50, 100, 150, 250, 600]
@@ -45,6 +46,10 @@ const chartAnalytcs = async () => {
     }
     try {
       let response = await fetch(`${base_url}/api_excel`, methodsFetc)
+      console.log(response.status)
+      if(response.status == 200 ){
+        loadingElement.classList.add('toggleDesactive');
+      }
       let responseData = await response.json()
       for (const key in responseData) {
         const dataObjects = responseData[key].slice().reverse()
